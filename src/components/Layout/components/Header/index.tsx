@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({
           <RightNavigation data={rightNavigationData} />
         </Box>
 
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: 'flex-end' }}>
           <IconButton
             size="large"
             aria-label="open navigation menu"
