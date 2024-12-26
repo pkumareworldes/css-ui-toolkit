@@ -7,7 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import { RightNavigation, UserMenu } from "./components";
-import { HeaderProps } from '../../../../types/header';
+import { HeaderProps } from '../../../../types/IHeader';
 
 const Header: React.FC<HeaderProps> = ({
   rightNavigationData,

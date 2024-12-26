@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { SidebarItem } from './sidebar';
-import { HeaderProps } from './header';
-import { PageHeaderProps } from './page-header';
+import { SidebarItem } from './ISidebar';
+import { HeaderProps } from './IHeader';
+import { PageHeaderProps } from './IPageHeader';
 
 export interface LayoutProps {
     children?: ReactNode;

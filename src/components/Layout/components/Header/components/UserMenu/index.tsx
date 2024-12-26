@@ -6,7 +6,7 @@ import Menu from '@mui/material/Menu';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { UserMenuProps } from '../../../../../../types/header';
+import { UserMenuProps } from '../../../../../../types/IHeader';
 
 const UserMenu: React.FC<UserMenuProps> = ({ data }) => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);

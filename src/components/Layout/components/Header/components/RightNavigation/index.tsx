@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import * as Icons from '@mui/icons-material';
-import { RightNavigationProps } from '../../../../../../types/header';
+import { RightNavigationProps } from '../../../../../../types/IHeader';
 
 type IconName = keyof typeof Icons;
 

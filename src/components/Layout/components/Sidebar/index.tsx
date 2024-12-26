@@ -11,7 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import * as Icons from "@mui/icons-material";
-import { SidebarProps } from '../../../../types/sidebar';
+import { SidebarProps } from '../../../../types/ISidebar';
 
 
 const drawerWidth = 240;

@@ -7,7 +7,7 @@ import {
     Container,
     Chip,
 } from "@mui/material";
-import { PageHeaderProps } from '../../../../types/page-header';
+import { PageHeaderProps } from '../../../../types/IPageHeader';
 
 
 const PageHeader: React.FC<PageHeaderProps> = ({ title, secondaryTitle, infoText, infoSecondaryText, chipStyles }: PageHeaderProps) => {
