@@ -8,22 +8,26 @@ export default function ROF({ eleProps }: ROFPropInterface) {
         className="text-main"
         style={{
           display: eleProps.alignRow ? "grid" : "flex",
-          ...eleProps.cssProps,
         }}
       >
-        <div className="rof--text">{eleProps.fieldName}</div>
+        <div
+          className="rof--text"
+          style={{ color: eleProps.fieldColor, ...eleProps.cssProps }}
+        >
+          {eleProps.fieldName}
+        </div>
         {eleProps.isLink ? (
           <Link
             href={eleProps.link}
             underline={eleProps.underline}
-            style={{ color: eleProps.fieldColor, ...eleProps.cssProps }}
+            style={{ color: eleProps.valueColor, ...eleProps.cssProps }}
           >
             {eleProps.fieldValue}
           </Link>
         ) : (
           <div
             className="rof--text"
-            style={{ color: eleProps.fieldColor, ...eleProps.cssProps }}
+            style={{ color: eleProps.valueColor, ...eleProps.cssProps }}
           >
             {eleProps.fieldValue}
           </div>
