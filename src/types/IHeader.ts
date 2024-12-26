@@ -19,12 +19,12 @@ export interface UserMenuProps {
 }
 
 export interface HeaderProps {
-    rightNavigationData: RightNavigationItem[];
+    RightNavigation?: React.ReactNode;
     userMenuData: UserMenuData;
     title: string;
     logo: string;
 }
 
 export interface RightNavigationProps {
-    data: RightNavigationItem[];
+    data?: RightNavigationItem[];
 }

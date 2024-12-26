@@ -13,7 +13,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import * as Icons from "@mui/icons-material";
 import { SidebarProps } from '../../../../types/ISidebar';
 
-
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
