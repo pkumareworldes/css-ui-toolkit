@@ -2,6 +2,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 import Layout from "..";
 import RightNavigation from "../components/Header/components/RightNavigation";
+
 const headerData = {
   rightNavigationData: [
     { label: "Home", path: "/", icon: "Home" },
@@ -34,6 +35,9 @@ const pageheaderData = {
   secondaryTitle: "Secondary Title",
   infoText: "Information about this page",
   infoSecondaryText: "More detailed info",
+  breadcrumbs: [
+    { linkText: "Home", link: "/" },
+  ],
 };
 
 export default {
