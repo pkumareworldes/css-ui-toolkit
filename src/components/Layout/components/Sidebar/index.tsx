@@ -11,6 +11,8 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import * as Icons from "@mui/icons-material";
+import { SidebarProps } from '../../../../types/sidebar';
+
 
 const drawerWidth = 240;
 
@@ -60,16 +62,6 @@ const Drawer = styled(MuiDrawer, {
     }),
 }));
 
-interface SidebarItem {
-    label: string;
-    path?: string;
-    icon?: string;
-    handler?: () => void;
-}
-
-interface SidebarProps {
-    data: SidebarItem[];
-}
 
 const Sidebar: React.FC<SidebarProps> = ({ data }) => {
     const [open, setOpen] = React.useState(false);
@@ -140,4 +132,3 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
 };
 
 export default Sidebar
-export type TSidebarItem = SidebarItem;

@@ -3,19 +3,9 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import * as Icons from '@mui/icons-material';
+import { RightNavigationProps } from '../../../../../../types/header';
 
 type IconName = keyof typeof Icons;
-
-interface RightNavigationItem {
-    label: string;
-    icon?: string;
-    path?: string;
-    handler?: () => void;
-}
-
-interface RightNavigationProps {
-    data: RightNavigationItem[];
-}
 
 const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
     const getIconComponent = (iconName: IconName) => {

@@ -7,29 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import { RightNavigation, UserMenu } from "./components";
-
-interface RightNavigationItem {
-  label: string;
-  path?: string;
-  icon?: string;
-  handler?: () => void;
-}
-
-interface UserMenuData {
-  username: string;
-  avatar: string;
-  settingsMenu: {
-    label: string;
-    handler: () => void;
-  }[];
-}
-
-interface HeaderProps {
-  rightNavigationData: RightNavigationItem[];
-  userMenuData: UserMenuData;
-  title: string;
-  logo: string;
-}
+import { HeaderProps } from '../../../../types/header';
 
 const Header: React.FC<HeaderProps> = ({
   rightNavigationData,

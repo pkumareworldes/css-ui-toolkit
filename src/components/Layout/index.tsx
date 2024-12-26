@@ -1,42 +1,10 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Box, CssBaseline, Container } from "@mui/material";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Sidebar, { TSidebarItem } from "./components/Sidebar";
+import Sidebar from "./components/Sidebar";
 import PageHeader from "./components/PageHeader";
-
-interface LayoutProps {
-    children?: ReactNode;
-    headerData: {
-        rightNavigationData: {
-            label: string;
-            path?: string;
-            icon?: string;
-            handler?: () => void;
-        }[];
-        userMenuData: {
-            username: string;
-            avatar: string;
-            settingsMenu: {
-                label: string;
-                handler: () => void;
-            }[];
-        };
-        title: string;
-        logo: string;
-    };
-    footerData?: {
-        // props for the Footer
-    };
-    sidebarData: TSidebarItem[],
-
-    pageheaderData: {
-        title: string;
-        secondaryTitle: string;
-        infoText: string;
-        infoSecondaryText: string;
-    };
-}
+import {LayoutProps} from '../../types/layout';
 
 const Layout: React.FC<LayoutProps> = ({
     children,
@@ -44,9 +12,6 @@ const Layout: React.FC<LayoutProps> = ({
     sidebarData,
     pageheaderData,
 }: LayoutProps) => {
-    console.log( headerData,
-        sidebarData,
-        pageheaderData)
     return (
         <Box sx={{ display: "flex", minHeight: "100vh", position: 'relative' }}>
             <CssBaseline />
