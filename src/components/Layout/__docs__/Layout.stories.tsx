@@ -1,8 +1,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import Layout from "..";
-
-
+import RightNavigation from "../components/Header/components/RightNavigation";
 const headerData = {
   rightNavigationData: [
     { label: "Home", path: "/", icon: "Home" },
@@ -53,7 +52,10 @@ const Template: Story<typeof Layout> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  headerData,
+  headerData: {
+    ...headerData,
+    RightNavigation: <RightNavigation data={headerData.rightNavigationData} />,
+  },
   footerData,
   sidebarData,
   pageheaderData,

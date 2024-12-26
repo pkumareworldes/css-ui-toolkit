@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import * as Icons from '@mui/icons-material';
 import { RightNavigationProps } from '../../../../../../types/IHeader';
+import { rightNavigationData } from '../../data';
 
 type IconName = keyof typeof Icons;
 
@@ -32,7 +33,7 @@ const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
                     onClick={handler}
                 >
                     {icon && (
-                        <IconButton color="primary" size="small" sx={{ '&:hover': { backgroundColor: 'transparent' }, }}>
+                        <IconButton color="primary" size="small" sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
                             {getIconComponent(icon as IconName)}
                         </IconButton>
                     )}
@@ -45,6 +46,10 @@ const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
             ))}
         </Box>
     );
+};
+
+RightNavigation.defaultProps = {
+    data: rightNavigationData,
 };
 
 export default RightNavigation;

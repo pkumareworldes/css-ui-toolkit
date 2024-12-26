@@ -6,11 +6,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import { RightNavigation, UserMenu } from "./components";
-import { HeaderProps } from '../../../../types/IHeader';
+import { UserMenu } from "./components";
+import { HeaderProps } from "../../../../types/IHeader";
 
 const Header: React.FC<HeaderProps> = ({
-  rightNavigationData,
+  RightNavigation,
   userMenuData,
   title,
   logo,
@@ -26,11 +26,11 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={0} sx={{ height: 51 }}>
+    <AppBar position="sticky" color="transparent" elevation={0} sx={{ borderBottom: 1, borderColor: '#D2D2D2' }}>
       <Container
         maxWidth={false}
         sx={{
-          display: { xs: "flex", md: "flex", height: '100%' },
+          display: { xs: "flex", md: "flex", height: "100%" },
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -57,47 +57,57 @@ const Header: React.FC<HeaderProps> = ({
           </Typography>
         </Box>
 
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: { xs: "none", md: "flex" },
-            justifyContent: "flex-end",
-            mr: 2,
-          }}
-        >
-          <RightNavigation data={rightNavigationData} />
-        </Box>
+        {RightNavigation && (
+          <>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                justifyContent: "flex-end",
+                mr: 2,
+              }}
+            >
+              {RightNavigation}
+            </Box>
 
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent: 'flex-end' }}>
-          <IconButton
-            size="large"
-            aria-label="open navigation menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-            sx={{ display: { xs: "block", md: "none" } }}
-          >
-            <RightNavigation data={rightNavigationData} />
-          </Menu>
-        </Box>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+                justifyContent: "flex-end",
+              }}
+            >
+              <IconButton
+                size="large"
+                aria-label="open navigation menu"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{ display: { xs: "block", md: "none" } }}
+              >
+                {RightNavigation}
+              </Menu>
+            </Box>
+          </>
+        )}
 
         <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "flex-end" }}>
           <UserMenu data={userMenuData} />
