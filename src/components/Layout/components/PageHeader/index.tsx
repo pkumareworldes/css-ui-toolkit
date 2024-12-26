@@ -35,7 +35,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                         <ArrowBackIcon />
                     </IconButton>
                 )}
-                <Breadcrumbs aria-label="breadcrumb">
+                <Breadcrumbs aria-label="breadcrumb" sx={{display: "flex", alignItems: "center"}}>
+                    <ArrowBackIcon />&nbsp;
                     {breadcrumbs.map(({ linkText, link }, index) =>
                         link ? (
                             <Link key={index} underline="hover" color="inherit" href={link}>

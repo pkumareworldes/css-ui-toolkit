@@ -29,6 +29,8 @@ const Layout: React.FC<LayoutProps> = ({
                     secondaryTitle={pageheaderData.secondaryTitle}
                     infoText={pageheaderData.infoText}
                     infoSecondaryText={pageheaderData.infoSecondaryText}
+                    breadcrumbs={pageheaderData.breadcrumbs}
+                    breadcrumbsHandler={pageheaderData.breadcrumbsHandler}
                 />
                 <Box component="main" sx={{ flexGrow: 1, mb: 4 }}>
                     <Container maxWidth={false}>{children}</Container>
