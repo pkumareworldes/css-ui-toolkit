@@ -79,6 +79,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.2.1",
     "is-lite": "^1.2.1",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "react-router-dom": "^7.1.1"
   }
 }
