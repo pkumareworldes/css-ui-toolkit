@@ -33,16 +33,22 @@ const sidebarData = [
 const pageheaderData = {
   title: "Page Title",
   secondaryTitle: "Secondary Title",
-  infoText: "Information about this page",
-  infoSecondaryText: "More detailed info",
-  breadcrumbs: [
-    { linkText: "Home", link: "/" },
-  ],
+  infoText: "Assigned to",
+  infoSecondaryText: "User Name",
+  chipStyles:{
+    size: 'small'
+  }
+  // breadcrumbs: [
+  //   { linkText: "Home", link: "/" },
+  // ],
 };
 
 export default {
   title: "Components/Layout",
   component: Layout,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     children: { control: "text" },
   },

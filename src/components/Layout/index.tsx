@@ -25,15 +25,10 @@ const Layout: React.FC<LayoutProps> = ({
                     logo={headerData.logo}
                 />
                 <PageHeader
-                    title={pageheaderData.title}
-                    secondaryTitle={pageheaderData.secondaryTitle}
-                    infoText={pageheaderData.infoText}
-                    infoSecondaryText={pageheaderData.infoSecondaryText}
-                    breadcrumbs={pageheaderData.breadcrumbs}
-                    breadcrumbsHandler={pageheaderData.breadcrumbsHandler}
+                    {...pageheaderData}
                 />
                 <Box component="main" sx={{ flexGrow: 1, mb: 4 }}>
-                    <Container maxWidth={false}>{children}</Container>
+                    <Container maxWidth={false} disableGutters>{children}</Container>
                 </Box>
                 <Footer />
             </Box>
