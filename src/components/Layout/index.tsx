@@ -1,11 +1,10 @@
 import React from "react";
 import { Box, CssBaseline, Container } from "@mui/material";
 import Header from "./components/Header";
-import RightNavigation from "./components/Header/components/RightNavigation";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 import PageHeader from "./components/PageHeader";
-import {LayoutProps} from '../../types/ILayout';
+import { LayoutProps } from '../../types/ILayout';
 
 const Layout: React.FC<LayoutProps> = ({
     children,
@@ -19,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({
             <Sidebar data={sidebarData} />
             <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column", overflowY: "auto", position: 'relative' }}>
                 <Header
-                    RightNavigation={<RightNavigation />}
+                    RightNavigation={headerData.RightNavigation}
                     userMenuData={headerData.userMenuData}
                     title={headerData.title}
                     logo={headerData.logo}
