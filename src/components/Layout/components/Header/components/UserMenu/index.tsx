@@ -50,7 +50,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ data }) => {
         </Box>
       </Tooltip>
       <Menu
-        sx={{ mt: '45px' }}
+        sx={{ mt: `${pxToRem(45)}` }}
         id="menu-appbar"
         anchorEl={anchorElUser}
         anchorOrigin={{
