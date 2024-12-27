@@ -6,21 +6,22 @@ export interface RightNavigationItem {
 }
 
 export interface UserMenuData {
-    username: string;
-    avatar: string;
-    settingsMenu: {
+    username?: string;
+    avatar?: string;
+    settingsMenu?: {
         label: string;
         handler: () => void;
     }[];
+    loginHandler?: () => void;
 }
 
 export interface UserMenuProps {
-    data: UserMenuData;
+    data?: UserMenuData;
 }
 
 export interface HeaderProps {
     RightNavigation?: React.ReactNode;
-    userMenuData: UserMenuData;
+    userMenuData?: UserMenuData;
     title: string;
     logo: string;
 }

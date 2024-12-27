@@ -9,6 +9,7 @@ import Container from "@mui/material/Container";
 import { UserMenu } from "./components";
 import { HeaderProps } from "../../../../types/IHeader";
 import pxToRem from "../../../../helpers/pxToRem";
+import { colors } from "../../../../themes";
 
 const Header: React.FC<HeaderProps> = ({
   RightNavigation,
@@ -27,11 +28,11 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={0} sx={{ borderBottom: 1, borderColor: '#D2D2D2' }}>
+    <AppBar position="sticky" color="transparent" elevation={0} sx={{ borderBottom: 1, borderColor: colors.mediumGray }}>
       <Container
         maxWidth={false}
         sx={{
-          display: { xs: "flex", md: "flex", height: "100%" },
+          display: { xs: "flex", md: "flex", height: "100%", minHeight: `${pxToRem(51)}` },
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -50,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
             noWrap
             sx={{
               fontFamily: "Segoe UI Semibold",
-              display: { xs: "none", md: "flex"},
+              display: { xs: "none", md: "flex" },
               fontSize: pxToRem(14),
               fontWeight: 700,
               color: "inherit",
