@@ -8,6 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import { UserMenu } from "./components";
 import { HeaderProps } from "../../../../types/IHeader";
+import pxToRem from "../../../../helpers/pxToRem";
 
 const Header: React.FC<HeaderProps> = ({
   RightNavigation,
@@ -43,11 +44,14 @@ const Header: React.FC<HeaderProps> = ({
             mr: 2,
           }}
         >
-          <img src={logo} alt="logo" style={{ height: "20px", marginRight: "8px" }} />
+          <img src={logo} alt="logo" style={{ height: "20px", marginRight: pxToRem(8) }} />
           <Typography
             variant="h6"
             noWrap
             sx={{
+              fontFamily: "Segoe UI Semibold",
+              display: { xs: "none", md: "flex"},
+              fontSize: pxToRem(14),
               fontWeight: 700,
               color: "inherit",
               textDecoration: "none",
