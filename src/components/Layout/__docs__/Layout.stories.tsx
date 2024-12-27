@@ -29,19 +29,6 @@ const sidebarData = [
   { label: "Help", path: "/help", icon: "Help" },
 ];
 
-const pageheaderData = {
-  title: "Page Title",
-  secondaryTitle: "Secondary Title",
-  infoText: "Assigned to",
-  infoSecondaryText: "User Name",
-  chipStyles: {
-    size: 'small'
-  }
-  // breadcrumbs: [
-  //   { linkText: "Home", link: "/" },
-  // ],
-};
-
 export default {
   title: "Components/Layout",
   component: Layout,
@@ -67,5 +54,4 @@ Default.args = {
   },
   footerData,
   sidebarData,
-  pageheaderData,
 };

@@ -10,5 +10,5 @@ export interface LayoutProps {
         // props for the Footer
     };
     sidebarData: SidebarItem[],
-    pageheaderData: PageHeaderProps;
+    pageheaderData?: PageHeaderProps;
 }

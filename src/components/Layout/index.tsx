@@ -23,9 +23,7 @@ const Layout: React.FC<LayoutProps> = ({
                     title={headerData.title}
                     logo={headerData.logo}
                 />
-                <PageHeader
-                    {...pageheaderData}
-                />
+                {pageheaderData && <PageHeader {...pageheaderData} />}
                 <Box component="main" sx={{ flexGrow: 1, mb: 4 }}>
                     <Container maxWidth={false} disableGutters>{children}</Container>
                 </Box>
