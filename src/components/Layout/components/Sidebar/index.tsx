@@ -12,6 +12,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import * as Icons from "@mui/icons-material";
 import { SidebarProps } from '../../../../types/ISidebar';
+import { colors } from "../../../../themes";
+import pxToRem from "../../../../helpers/pxToRem";
 
 const drawerWidth = 240;
 
@@ -81,7 +83,11 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
     };
 
     return (
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open} PaperProps={{
+            sx: {
+                backgroundColor: `${colors.white}`,
+            }
+        }}>
             <DrawerHeader
                 sx={{ display: "flex", justifyContent: open ? "flex-end" : "center" }}
             >
@@ -93,7 +99,7 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
                     {open ? <ChevronLeftIcon /> : <MenuIcon />}
                 </IconButton>
             </DrawerHeader>
-            <Divider />
+            {/* <Divider /> */}
             <List>
                 {data.map((item, index) => (
                     <ListItem key={index} disablePadding sx={{ display: "block" }}>
@@ -103,7 +109,7 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
                                 minHeight: 48,
                                 justifyContent: open ? "initial" : "center",
                                 px: activeItem === index ? 2 : 2.5,
-                                borderLeft: activeItem === index ? "4px solid #0078D4" : "none",
+                                borderLeft: activeItem === index ? `${pxToRem(4)} solid ${colors.primaryBlue}` : "none",
                                 borderTopLeftRadius: 2,
                                 borderBottomLeftRadius: 2
                             }}
@@ -113,7 +119,7 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
                                     minWidth: 0,
                                     justifyContent: "center",
                                     mr: open ? 3 : "auto",
-                                    ...(activeItem === index && {color: 'black'})
+                                    ...(activeItem === index && { color: 'black' })
                                 }}
                             >
                                 {getIconComponent(item.icon)}
