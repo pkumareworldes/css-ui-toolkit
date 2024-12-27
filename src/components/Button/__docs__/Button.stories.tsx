@@ -17,7 +17,6 @@ Playground.args = {
   variant:"contained",
   color:"success",
   size: "medium"
-
 };
 
 export const Variants: ComponentStory<typeof Button> = () => (
