@@ -15,6 +15,7 @@ const headerData = {
       { label: "Profile", handler: () => alert("Profile clicked") },
       { label: "Logout", handler: () => alert("Logout clicked") },
     ],
+    loginHandler: () => alert("Login clicked")
   },
   title: "Eworld Header",
   logo: "/favicon.svg",
@@ -35,7 +36,7 @@ const pageheaderData = {
   secondaryTitle: "Secondary Title",
   infoText: "Assigned to",
   infoSecondaryText: "User Name",
-  chipStyles:{
+  chipStyles: {
     size: 'small'
   }
   // breadcrumbs: [
