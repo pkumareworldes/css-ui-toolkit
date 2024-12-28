@@ -1,7 +1,13 @@
 import { lightTheme } from "./light.theme";
 import { darkTheme } from "./dark.theme";
+import colors from "./colors";
 
-export const themes = {
+const themes = {
   light: lightTheme,
-  dark: darkTheme,
+  dark: darkTheme
 };
+
+export {
+  themes,
+  colors
+}
