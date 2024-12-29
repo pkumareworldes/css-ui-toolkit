@@ -3,10 +3,8 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import * as Icons from '@mui/icons-material';
-import { RightNavigationProps } from '../../../../../../types/IHeader';
+import { RightNavigationProps, IconName } from '../../../../../../types/IHeader';
 import { rightNavigationData } from '../../data';
-
-type IconName = keyof typeof Icons;
 
 const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
     const getIconComponent = (iconName: IconName) => {
@@ -16,7 +14,7 @@ const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
 
     return (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            {data?.map(({ label, icon, path, handler }, idx) => (
+            {data?.map(({ label, icon, handler }, idx) => (
                 <Box
                     key={idx}
                     sx={{
