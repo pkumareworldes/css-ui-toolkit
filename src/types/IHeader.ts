@@ -1,3 +1,5 @@
+import * as Icons from '@mui/icons-material';
+
 export interface RightNavigationItem {
     label: string;
     path?: string;
@@ -29,3 +31,5 @@ export interface HeaderProps {
 export interface RightNavigationProps {
     data?: RightNavigationItem[];
 }
+
+export type IconName = keyof typeof Icons;
