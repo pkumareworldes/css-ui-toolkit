@@ -30,12 +30,13 @@ const Header: React.FC<HeaderProps> = ({
         position="sticky"
         color="transparent"
         elevation={0}
-        sx={{
+        sx={(theme) => ({
           borderBottom: 1,
-          borderColor: colors.mediumGray,
-          backgroundColor: colors.white,
-        }}
+          borderColor: theme.palette.divider,
+          backgroundColor: theme.palette.background.default,
+        })}
       >
+
         <Container
           maxWidth={false}
           sx={{

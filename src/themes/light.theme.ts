@@ -18,6 +18,7 @@ export const lightTheme = createTheme({
       primary: colors.black,
       secondary: colors.darkGray,
     },
+    divider: colors.mediumGray,
   },
   typography: {
     fontFamily: "'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif",

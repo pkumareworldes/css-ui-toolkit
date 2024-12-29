@@ -6,7 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import { MobilePortalProps } from "../../../../types/IMobilePortal";
-import { colors } from "../../../../themes";
 import pxToRem from "../../../../helpers/pxToRem";
 import * as Icons from "@mui/icons-material";
 
@@ -21,6 +20,7 @@ const MobileDrawerPortal: React.FC<MobilePortalProps> = ({
         const IconComponent = Icons[iconName as keyof typeof Icons];
         return IconComponent ? <IconComponent /> : null;
     };
+
     return (
         <Portal>
             <Drawer
@@ -28,25 +28,25 @@ const MobileDrawerPortal: React.FC<MobilePortalProps> = ({
                 open={isOpen}
                 onClose={() => toggleDrawer(false)}
                 PaperProps={{
-                    sx: { display: "flex", flexDirection: "column", gap: 3, width: 300, backgroundColor: colors.white },
+                    sx: { display: "flex", flexDirection: "column", gap: 3, width: 300, backgroundColor: (theme) => theme.palette.background.paper },
                 }}
             >
                 <Box
-                    sx={{
+                    sx={(theme) => ({
                         px: 3,
                         py: 2,
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        borderBottom: `${pxToRem(1)} solid ${colors.mediumGray}`,
-                    }}
+                        borderBottom: `${pxToRem(1)} solid ${theme.palette.divider}`,
+                    })}
                 >
                     <Typography
                         variant="h6"
                         sx={{
                             fontFamily: "Segoe UI Semibold",
                             fontSize: pxToRem(16),
-                            color: colors.black,
+                            color: theme => theme.palette.text.primary,
                         }}
                     >
                         Menu
@@ -57,7 +57,7 @@ const MobileDrawerPortal: React.FC<MobilePortalProps> = ({
                         onClick={() => toggleDrawer(false)}
                         aria-label="close"
                         sx={{
-                            color: colors.black,
+                            color: theme => theme.palette.text.primary,
                         }}
                     >
                         <CloseIcon />
@@ -85,7 +85,8 @@ const MobileDrawerPortal: React.FC<MobilePortalProps> = ({
                                 ))}
                             </Box>
                             <Divider />
-                        </>)}
+                        </>
+                    )}
                     <Box>{RightNavigation}</Box>
                 </Box>
             </Drawer>

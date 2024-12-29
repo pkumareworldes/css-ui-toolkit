@@ -22,7 +22,13 @@ const Footer: React.FC<FooterProps> = ({
     contactDetails,
 }) => {
     return (
-        <Box sx={{ padding: 2, textAlign: 'center', borderTop: `${pxToRem(1)} solid ${colors.mediumGray}` }}>
+        <Box
+            sx={(theme) => ({
+                padding: 2,
+                textAlign: 'center',
+                borderTop: `${pxToRem(1)} solid ${theme.palette.divider}`,
+            })}
+        >
             <Typography variant="body2">
                 <Link href={termsUrl} target="_blank" rel="noopener noreferrer">
                     {termsLabel}
