@@ -20,7 +20,12 @@ const headerData = {
 };
 
 const footerData = {
-  content: "Footer Content",
+  termsLabel: "Terms and Conditions",
+  termsUrl: "#",
+  buildVersionLabel: "Build Version",
+  buildVersion: "1.0.0",
+  contactLabel: "Contact Us",
+  contactDetails: "support@example.com",
 };
 
 const sidebarData = [
