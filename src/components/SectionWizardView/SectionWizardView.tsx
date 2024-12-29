@@ -1,16 +1,16 @@
-import { Card, CardContent, Divider, Grid2 as Grid } from "@mui/material"
+import { Card, Divider, Grid2 as Grid } from "@mui/material"
 import { MUIChip } from "../Chip";
 import { MUIROF } from "../ReadonlyField";
 import { ISectionWizardViewProps, ISubsection } from "./types";
 import { ChipContainerStyle, ChipTitleStyle } from "./styles";
-import './styles.css'
+import * as Styled from './styles'
 
 const WizardSubsection = ({ options }: { options: ISubsection }) => {
 
     const { statusSection, section, footer: Footer, isFullScreen } = options
     const responsiveColumn = isFullScreen ? { xs: 6, sm: 6, md: 12, lg: 12, xl: 12 } : 12
 
-    return <div className="wizard-subsection-container">
+    return <Styled.WizardSubsectionContainer>
         <div>
             <Grid
                 container
@@ -39,12 +39,12 @@ const WizardSubsection = ({ options }: { options: ISubsection }) => {
             Footer && <Footer />
         }
         <Divider className="wizard-subsection-container-divider" />
-    </div>
+    </Styled.WizardSubsectionContainer>
 }
 
 const SectionWizardView = ({ header, subsections }: ISectionWizardViewProps) => {
-    return <Card>
-        <CardContent>
+    return <Card >
+        <Styled.SectionWizardViewContainer>
             <h2>
                 {header?.title}
             </h2>
@@ -54,7 +54,7 @@ const SectionWizardView = ({ header, subsections }: ISectionWizardViewProps) => 
                 }
             </div>
 
-        </CardContent>
+        </Styled.SectionWizardViewContainer>
     </Card>
 }
 
