@@ -1,0 +1,11 @@
+.section-container .con:last-child .pillow {
+    display: none;
+}
+
+.section-container .con {
+    margin-bottom: 2rem;
+}
+
+.section-container .con:last-child {
+    margin-bottom: 0;
+}
