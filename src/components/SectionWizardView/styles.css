@@ -1,11 +1,11 @@
-.section-container .con:last-child .pillow {
+.section-container .wizard-subsection-container:last-child .wizard-subsection-container-divider {
     display: none;
 }
 
-.section-container .con {
+.section-container .wizard-subsection-container {
     margin-bottom: 2rem;
 }
 
-.section-container .con:last-child {
+.section-container .wizard-subsection-container:last-child {
     margin-bottom: 0;
 }

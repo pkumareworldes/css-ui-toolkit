@@ -10,7 +10,7 @@ const WizardSubsection = ({ options }: { options: ISubsection }) => {
     const { statusSection, section, footer: Footer, isFullScreen } = options
     const responsiveColumn = isFullScreen ? { xs: 6, sm: 6, md: 12, lg: 12, xl: 12 } : 12
 
-    return <div className="con">
+    return <div className="wizard-subsection-container">
         <div>
             <Grid
                 container
@@ -38,7 +38,7 @@ const WizardSubsection = ({ options }: { options: ISubsection }) => {
         {
             Footer && <Footer />
         }
-        <Divider className="pillow" />
+        <Divider className="wizard-subsection-container-divider" />
     </div>
 }
 
