@@ -1,3 +1,5 @@
+import {SidebarItem} from './ISidebar';
+
 export interface RightNavigationItem {
     label: string;
     path?: string;
@@ -22,6 +24,7 @@ export interface UserMenuProps {
 export interface HeaderProps {
     RightNavigation?: React.ReactNode;
     userMenuData?: UserMenuData;
+    sidebarData?: SidebarItem[];
     title: string;
     logo: string;
 }
