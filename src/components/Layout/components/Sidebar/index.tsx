@@ -83,11 +83,15 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
     };
 
     return (
-        <Drawer variant="permanent" open={open} PaperProps={{
-            sx: {
-                backgroundColor: `${colors.white}`,
-            }
-        }}>
+        <Drawer
+            variant="permanent"
+            open={open}
+            PaperProps={{
+                sx: (theme) => ({
+                    backgroundColor: theme.palette.background.default
+                }),
+            }}
+        >
             <DrawerHeader
                 sx={{ display: "flex", justifyContent: open ? "flex-end" : "center" }}
             >
@@ -99,31 +103,33 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
                     {open ? <ChevronLeftIcon /> : <MenuIcon />}
                 </IconButton>
             </DrawerHeader>
-            {/* <Divider /> */}
             <List>
                 {data.map((item, index) => (
                     <ListItem key={index} disablePadding sx={{ display: "block" }}>
                         <ListItemButton
                             onClick={() => handleItemClick(index, item.handler)}
-                            sx={{
+                            sx={(theme) => ({
                                 minHeight: 48,
                                 justifyContent: open ? "initial" : "center",
                                 px: activeItem === index ? 2 : 2.5,
-                                borderLeft: activeItem === index ? `${pxToRem(4)} solid ${colors.primaryBlue}` : "none",
+                                borderLeft: activeItem === index
+                                    ? `${pxToRem(4)} solid ${theme.palette.primary.main}`
+                                    : "none",
                                 borderTopLeftRadius: 2,
-                                borderBottomLeftRadius: 2
-                            }}
+                                borderBottomLeftRadius: 2,
+                            })}
                         >
                             <ListItemIcon
-                                sx={{
+                                sx={(theme) => ({
                                     minWidth: 0,
                                     justifyContent: "center",
                                     mr: open ? 3 : "auto",
-                                    ...(activeItem === index && { color: 'black' })
-                                }}
+                                    ...(activeItem === index && { color: theme.palette.text.primary }),
+                                })}
                             >
                                 {getIconComponent(item.icon)}
                             </ListItemIcon>
+
                             <ListItemText
                                 primary={item.label}
                                 sx={{ opacity: open ? 1 : 0 }}
@@ -136,4 +142,4 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
     );
 };
 
-export default Sidebar
+export default Sidebar;
