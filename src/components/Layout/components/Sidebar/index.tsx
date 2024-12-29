@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled, Theme, CSSObject } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import Divider from "@mui/material/Divider";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -83,11 +82,20 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
     };
 
     return (
-        <Drawer variant="permanent" open={open} PaperProps={{
-            sx: {
-                backgroundColor: `${colors.white}`,
-            }
-        }}>
+        <Drawer
+            variant="permanent"
+            open={open}
+            sx={{
+                display: { xs: 'none', md: 'flex' }, // This hides the Drawer in mobile view
+                ...(open ? {} : { width: 0 }), // Ensure the width is 0 when the drawer is closed
+            }}
+            PaperProps={{
+                sx: {
+                    display: { xs: 'none', md: 'flex' },
+                    backgroundColor: `${colors.white}`,
+                }
+            }}
+        >
             <DrawerHeader
                 sx={{ display: "flex", justifyContent: open ? "flex-end" : "center" }}
             >
@@ -99,7 +107,6 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
                     {open ? <ChevronLeftIcon /> : <MenuIcon />}
                 </IconButton>
             </DrawerHeader>
-            {/* <Divider /> */}
             <List>
                 {data.map((item, index) => (
                     <ListItem key={index} disablePadding sx={{ display: "block" }}>

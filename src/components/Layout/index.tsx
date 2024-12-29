@@ -11,23 +11,19 @@ const Layout: React.FC<LayoutProps> = ({
     headerData,
     sidebarData,
     pageheaderData,
+    footerData,
 }: LayoutProps) => {
     return (
         <Box sx={{ display: "flex", minHeight: "100vh", position: 'relative' }}>
             <CssBaseline />
             <Sidebar data={sidebarData} />
             <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column", overflowY: "auto", position: 'relative' }}>
-                <Header
-                    RightNavigation={headerData.RightNavigation}
-                    userMenuData={headerData.userMenuData}
-                    title={headerData.title}
-                    logo={headerData.logo}
-                />
+                <Header sidebarData={sidebarData} {...headerData}/>
                 {pageheaderData && <PageHeader {...pageheaderData} />}
                 <Box component="main" sx={{ flexGrow: 1, mb: 4 }}>
                     <Container maxWidth={false} disableGutters>{children}</Container>
                 </Box>
-                <Footer />
+                {footerData && <Footer {...footerData} />}
             </Box>
         </Box>
     );
