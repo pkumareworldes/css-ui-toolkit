@@ -13,16 +13,24 @@ const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
     };
 
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: 'flex-start',
+                gap: 1,
+            }}
+        >
             {data?.map(({ label, icon, handler }, idx) => (
                 <Box
                     key={idx}
                     sx={{
                         display: 'flex',
+                        flexDirection: 'row',
                         alignItems: 'center',
                         gap: 1,
+                        width: '100%',
                         cursor: 'pointer',
-                        padding: 1,
                         borderRadius: 1,
                         '&:hover': {
                             backgroundColor: 'action.hover',
