@@ -1,25 +1,15 @@
 import React from 'react';
 import { Box, Typography, Link } from '@mui/material';
 import { FooterProps } from "../../../../types/IFooter";
-import { colors } from '../../../../themes';
 import pxToRem from '../../../../helpers/pxToRem';
 
-const defaultProps: FooterProps = {
-    termsLabel: "Terms and Conditions",
-    termsUrl: "#",
-    buildVersionLabel: "Build Version",
-    buildVersion: "1.0.0",
-    contactLabel: "Contact Us",
-    contactDetails: "support@example.com",
-};
-
 const Footer: React.FC<FooterProps> = ({
-    termsLabel,
-    termsUrl,
-    buildVersionLabel,
-    buildVersion,
-    contactLabel,
-    contactDetails,
+    termsLabel = "Terms and Conditions",
+    termsUrl = "#",
+    buildVersionLabel = "Build Version",
+    buildVersion = "1.0.0",
+    contactLabel = "Contact Us",
+    contactDetails = "support@example.com",
 }) => {
     return (
         <Box
@@ -29,21 +19,39 @@ const Footer: React.FC<FooterProps> = ({
                 borderTop: `${pxToRem(1)} solid ${theme.palette.divider}`,
             })}
         >
-            <Typography variant="body2">
-                <Link href={termsUrl} target="_blank" rel="noopener noreferrer">
-                    {termsLabel}
-                </Link>
-            </Typography>
-            <Typography variant="body2" sx={{ marginTop: 1 }}>
-                {buildVersionLabel}: {buildVersion}
-            </Typography>
-            <Typography variant="body2" sx={{ marginTop: 1 }}>
-                {contactLabel}: {contactDetails}
-            </Typography>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: { xs: 1, md: 2 },
+                }}
+            >
+                <Typography variant="body2">
+                    <Link href={termsUrl} target="_blank" rel="noopener noreferrer">
+                        {termsLabel}
+                    </Link>
+                </Typography>
+                <Typography
+                    variant="body2"
+                    sx={{ display: { xs: 'none', md: 'block' } }}
+                >
+                    |
+                </Typography>
+                <Typography variant="body2">{contactLabel}: {contactDetails}</Typography>
+            </Box>
+            <Box
+                sx={{
+                    marginTop: { xs: 1, md: 2 },
+                }}
+            >
+                <Typography variant="body2">
+                    {buildVersionLabel}: {buildVersion}
+                </Typography>
+            </Box>
         </Box>
     );
 };
-
-Footer.defaultProps = defaultProps;
 
 export default Footer;
