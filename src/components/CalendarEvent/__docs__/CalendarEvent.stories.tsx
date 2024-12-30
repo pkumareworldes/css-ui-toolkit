@@ -1,8 +1,8 @@
 // CalendarEvent.stories.tsx
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import CalendarEvent from "../CalendarEvent";  // Import your CalendarEvent component
-import { CalendarEventProps } from "../../../types/calendarevent";  // Import the interface for typing
+import CalendarEvent from "../CalendarEvent"; // Import your CalendarEvent component
+import { CalendarEventProps } from "../../../types/calendarevent"; // Import the interface for typing
 
 // Define Storybook metadata (this is the default export that Storybook is looking for)
 const meta: Meta = {
@@ -39,16 +39,18 @@ const meta: Meta = {
       description: "Accepted icon (optional)",
     },
     isLink: {
-        control: "boolean",
-        description: "If true, makes the whole card clickable",
-      },
+      control: "boolean",
+      description: "If true, makes the whole card clickable",
+    },
   },
 };
 
 export default meta;
 
 // Template function to create the component with different args
-const Template: Story<CalendarEventProps> = (args) => <CalendarEvent {...args} />;
+const Template: Story<CalendarEventProps> = (args) => (
+  <CalendarEvent {...args} />
+);
 
 // Define the default story with sample props
 export const Default = Template.bind({});
@@ -57,9 +59,9 @@ Default.args = {
   mins: 30,
   title: "Harold Black",
   location: "Call: (808) 489-12039",
-  color: "#DEE9F1",  // Light blue color
+  color: "#DEE9F1", // Light blue color
   priority: "medium",
   acceptedIcon: "./accepted0.svg", // Example icon
   acceptedIconColor: "#0078D4",
-  isLink: false
+  isLink: false,
 };

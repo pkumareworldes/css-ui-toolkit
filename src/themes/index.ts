@@ -4,10 +4,7 @@ import colors from "./colors";
 
 const themes = {
   light: lightTheme,
-  dark: darkTheme
+  dark: darkTheme,
 };
 
-export {
-  themes,
-  colors
-}
+export { themes, colors };

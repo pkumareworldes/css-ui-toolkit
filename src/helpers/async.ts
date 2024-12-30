@@ -1,42 +1,52 @@
-import is from 'is-lite';
+import is from "is-lite";
 
-import { CorsOptions, PollOptions, RequestError, RequestOptions } from '../types/common';
+import {
+  CorsOptions,
+  PollOptions,
+  RequestError,
+  RequestOptions,
+} from "../types/ICommon";
 
 export const ASYNC_STATUS = {
-  IDLE: 'IDLE',
-  PENDING: 'PENDING',
-  SUCCESS: 'SUCCESS',
-  ERROR: 'ERROR',
+  IDLE: "IDLE",
+  PENDING: "PENDING",
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
 } as const;
 
 /**
  * Format a CORS response
  */
-export function cors(data: any, statusCodeOrOptions: number | CorsOptions = 200) {
+export function cors(
+  data: any,
+  statusCodeOrOptions: number | CorsOptions = 200,
+) {
   const {
     allowCredentials = true,
     allowedHeaders = [],
-    methods = ['GET'],
-    origin = '*',
+    methods = ["GET"],
+    origin = "*",
     responseHeaders = undefined,
     statusCode = 200,
-  } = is.number(statusCodeOrOptions) ? { statusCode: statusCodeOrOptions } : statusCodeOrOptions;
+  } = is.number(statusCodeOrOptions)
+    ? { statusCode: statusCodeOrOptions }
+    : statusCodeOrOptions;
 
-  const allowMethods = [...methods, 'OPTIONS'];
+  const allowMethods = [...methods, "OPTIONS"];
   const allowHeaders = [
     ...new Set([
-      'Accept-Version',
-      'Accept',
-      'Authorization',
-      'Content-Length',
-      'Content-MD5',
-      'Content-Type',
-      'Date',
-      'x-amz-date',
-      'x-amz-security-token',
-      'X-Api-Version',
-      'X-CSRF-Token',
-      'X-Requested-With',
+      "Accept-Version",
+      "Accept",
+      "Authorization",
+      "Content-Length",
+      "Content-MD5",
+      "Content-Type",
+      "Date",
+      "x-amz-date",
+      "x-amz-security-token",
+      "X-Api-Version",
+      "X-CSRF-Token",
+      "X-Requested-With",
       ...allowedHeaders,
     ]),
   ];
@@ -44,7 +54,7 @@ export function cors(data: any, statusCodeOrOptions: number | CorsOptions = 200)
 
   if (responseHeaders) {
     exposedHeaders = {
-      'Access-Control-Expose-Headers': Object.keys(responseHeaders).join(','),
+      "Access-Control-Expose-Headers": Object.keys(responseHeaders).join(","),
       ...responseHeaders,
     };
   }
@@ -52,10 +62,10 @@ export function cors(data: any, statusCodeOrOptions: number | CorsOptions = 200)
   return {
     body: JSON.stringify(data),
     headers: {
-      'Access-Control-Allow-Origin': origin,
-      'Access-Control-Allow-Credentials': allowCredentials,
-      'Access-Control-Allow-Methods': allowMethods.join(','),
-      'Access-Control-Allow-Headers': allowHeaders.join(','),
+      "Access-Control-Allow-Origin": origin,
+      "Access-Control-Allow-Credentials": allowCredentials,
+      "Access-Control-Allow-Methods": allowMethods.join(","),
+      "Access-Control-Allow-Headers": allowHeaders.join(","),
       ...exposedHeaders,
     },
     statusCode,
@@ -67,7 +77,10 @@ export function cors(data: any, statusCodeOrOptions: number | CorsOptions = 200)
  * @param condition
  * @param options
  */
-export async function poll(condition: () => boolean, options: PollOptions = {}): Promise<void> {
+export async function poll(
+  condition: () => boolean,
+  options: PollOptions = {},
+): Promise<void> {
   const { delay = 1, maxRetries = 5 } = options;
   let retries = 0;
 
@@ -78,24 +91,27 @@ export async function poll(condition: () => boolean, options: PollOptions = {}):
   }
 
   if (retries >= maxRetries) {
-    throw new Error('Timeout');
+    throw new Error("Timeout");
   }
 }
 
 /**
  * Make async requests
  */
-export async function request<D = any>(url: string, options: RequestOptions = {}): Promise<D> {
-  const { body, headers, method = 'GET' }: RequestOptions = options;
+export async function request<D = any>(
+  url: string,
+  options: RequestOptions = {},
+): Promise<D> {
+  const { body, headers, method = "GET" }: RequestOptions = options;
 
   if (!url) {
-    throw new Error('URL is required');
+    throw new Error("URL is required");
   }
 
   const params: RequestOptions = {
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
       ...headers,
     },
     method,
@@ -105,7 +121,7 @@ export async function request<D = any>(url: string, options: RequestOptions = {}
     params.body = is.plainObject(body) ? JSON.stringify(body) : body;
   }
 
-  return fetch(url, params).then(async response => {
+  return fetch(url, params).then(async (response) => {
     const text = await response.text();
     let content: any;
 
@@ -132,7 +148,7 @@ export async function request<D = any>(url: string, options: RequestOptions = {}
  * Block execution
  */
 export function sleep(seconds = 1) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, seconds * 1000);
   });
 }

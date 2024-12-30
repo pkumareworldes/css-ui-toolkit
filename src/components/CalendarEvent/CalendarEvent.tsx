@@ -1,10 +1,9 @@
-import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 
 import { CalendarEventProps } from "../../types/ICalendarEventProps";
-//import { Link } from "react-router-dom"; 
+//import { Link } from "react-router-dom";
 
-const CalendarEvent= ({
+const CalendarEvent = ({
   dateTime,
   title,
   subTitle,
@@ -12,12 +11,23 @@ const CalendarEvent= ({
   ...rest
 }: CalendarEventProps) => {
   const content = (
-    <Card
-      sx={rest.sxStyles}
-    >
-      <CardContent sx={{ display: "flex", flexDirection: "row", gap: "1rem", padding: "0.5rem" }}>
+    <Card sx={rest.sxStyles}>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          gap: "1rem",
+          padding: "0.5rem",
+        }}
+      >
         {/* Time and Duration */}
-        <Box sx={{ display: "flex", justifyContent: "space-between", flexDirection: "column" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "column",
+          }}
+        >
           <Typography variant="body2" sx={{ fontWeight: "bold" }}>
             {time}
           </Typography>
@@ -27,12 +37,20 @@ const CalendarEvent= ({
         </Box>
 
         {/* Event Name and Location */}
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "0.3125rem" }}>
-          <Typography variant="h6" sx={{ fontWeight: "bold", fontSize: "1rem", lineHeight: 1.2 }}>
+        <Box
+          sx={{ display: "flex", flexDirection: "column", gap: "0.3125rem" }}
+        >
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: "bold", fontSize: "1rem", lineHeight: 1.2 }}
+          >
             {title}
           </Typography>
           {location && (
-            <Typography variant="body2" sx={{ color: "text.secondary", fontSize: "0.875rem" }}>
+            <Typography
+              variant="body2"
+              sx={{ color: "text.secondary", fontSize: "0.875rem" }}
+            >
               {location}
             </Typography>
           )}

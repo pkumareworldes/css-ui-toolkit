@@ -2,7 +2,6 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
-import svgr from "vite-plugin-svgr";
 export default defineConfig({
   test: {
     globals: true,
@@ -22,6 +21,6 @@ export default defineConfig({
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true, // Clears the output directory before building.
   },
-  plugins: [dts(), svgr()], //Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  plugins: [dts()], //Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
   //svgr()  will allow Vite to treat .svg files as React components, which you can import and use directly in JSX.*/,
 });

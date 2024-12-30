@@ -1,9 +1,9 @@
 import { createTheme } from "@mui/material";
-import colors from './colors';
+import colors from "./colors";
 
 export const lightTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: "light",
     background: {
       default: colors.white,
       paper: colors.lightGray,
@@ -22,21 +22,21 @@ export const lightTheme = createTheme({
   typography: {
     fontFamily: "'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif",
     h1: {
-      fontSize: '1.5rem',
+      fontSize: "1.5rem",
       fontWeight: 400,
     },
     h2: {
-      fontSize: '1.25rem',
+      fontSize: "1.25rem",
       fontWeight: 500,
     },
     body1: {
-      fontSize: '1rem',
+      fontSize: "1rem",
     },
     body2: {
-      fontSize: '0.875rem',
+      fontSize: "0.875rem",
     },
     button: {
-      fontSize: '0.875rem',
+      fontSize: "0.875rem",
     },
   },
 });

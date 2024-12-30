@@ -113,7 +113,7 @@ const Storage = {
 
 if (!Storage.isSupported()) {
   console.log(
-    "Your browser does not support sessionStorage. Don't worry. The app can work without it."
+    "Your browser does not support sessionStorage. Don't worry. The app can work without it.",
   );
 }
 

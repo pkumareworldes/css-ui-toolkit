@@ -1,12 +1,12 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import BasicChips from "../index";
-import { IChipProp } from "../chipInterface";
-import { DefaultChipProps, MultiChip } from "../chipSchema";
+import { MultiChip, Chip } from "../index";
+import { IChipProp } from "../../../types/IChip";
+import { DefaultChipProps, multiChipsList } from "./chipSchema";
 // Default metadata for the story
 export default {
   title: "Components/BasicChips", // Title that will appear in Storybook's sidebar
-  component: BasicChips, // Component to showcase in the story
+  component: MultiChip, // Component to showcase in the story
   argTypes: {
     eleProps: {
       control: "object", // Allows the props to be controlled as an object in the UI
@@ -16,16 +16,20 @@ export default {
 } as Meta;
 
 // Template to generate a story for BasicChips component
-const Template: Story<IChipProp> = (args) => <BasicChips {...args} />;
+const Template: Story<IChipProp> = (args) => <MultiChip {...args} />;
 
+const ChipTemplate: Story<IChipProp> = (args) => <Chip {...args} />;
 // Default story for BasicChips component with sample props
-export const DefaultChip = Template.bind({});
+export const DefaultChip = ChipTemplate.bind({});
+
 DefaultChip.args = {
-  eleProps: DefaultChipProps,
+  ...DefaultChipProps,
 };
 
 // A story demonstrating chips in a column direction
 export const MultipleChip = Template.bind({});
 MultipleChip.args = {
-  eleProps: MultiChip,
+  direction: "row",
+  varient: "outlined",
+  values: multiChipsList,
 };

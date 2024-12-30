@@ -14,9 +14,9 @@ const Template: Meta<typeof Button> = (args) => <Button {...args} />;
 export const Playground = Template.bind({});
 Playground.args = {
   label: "Click me!",
-  variant:"contained",
-  color:"success",
-  size: "medium"
+  variant: "contained",
+  color: "success",
+  size: "medium",
 };
 
 export const Variants: ComponentStory<typeof Button> = () => (
