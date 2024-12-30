@@ -1,0 +1,49 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import Example from "./Example.tsx";
+import * as Timeline from "./Timeline.stories.tsx";
+
+<Meta of={Timeline} title="Custom Timeline" />
+
+# Custom Timeline
+
+The `CustomTimeline` component is a reusable and customizable timeline visualization tool. It displays phases and tasks with associated statuses in a vertical or horizontal format.
+
+#### Example
+
+<Canvas of={Timeline.Default} />
+
+## Usage
+
+```tsx
+import { CustomTimeline } from "./Timeline";
+
+const Example = () => {
+  return (
+    <CustomTimeline
+      Title="Case Timeline"
+      Timeline={[
+        {
+          Title: "Phase 1",
+          Code: "P1",
+          Color: "primary",
+          status: "completed",
+          Sublist: [
+            { Title: "Task 1", status: "completed", Component: "Completed: 01/01/2024" },
+            { Title: "Task 2", status: "in-progress", Component: "Due: 01/15/2024" },
+          ],
+        },
+        {
+          Title: "Phase 2",
+          Code: "P2",
+          Color: "secondary",
+          status: "in-progress",
+          Sublist: [
+            { Title: "Task 1", status: "pending", Component: "Pending: 02/01/2024" },
+          ],
+        },
+      ]}
+    />
+  );
+};
+
+export default Example;
