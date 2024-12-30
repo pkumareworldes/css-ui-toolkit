@@ -11,21 +11,19 @@ const WizardSubsection = ({ options }: { options: ISubsection }) => {
     const responsiveColumn = isFullScreen ? { xs: 6, sm: 6, md: 12, lg: 12, xl: 12 } : 12
 
     return <Styled.WizardSubsectionContainer>
-        <div>
-            <Grid
-                container
-                direction="row"
-                justifySelf={'baseline'}
-                alignContent={'center'}
-            >
-                <ChipTitleStyle>{statusSection?.title}</ChipTitleStyle>
-                {
-                    statusSection?.options.map(data => <ChipContainerStyle>
-                        <MUIChip eleProps={data} />
-                    </ChipContainerStyle>)
-                }
-            </Grid>
-        </div>
+        <Grid
+            container
+            direction="row"
+            justifySelf={'baseline'}
+            alignContent={'center'}
+        >
+            <ChipTitleStyle>{statusSection?.title}</ChipTitleStyle>
+            {
+                statusSection?.options.map(data => <ChipContainerStyle>
+                    <MUIChip eleProps={data} />
+                </ChipContainerStyle>)
+            }
+        </Grid>
         <Grid container spacing={1} padding={2} paddingLeft={0} columns={responsiveColumn}>
             {
                 section?.map(field => {
