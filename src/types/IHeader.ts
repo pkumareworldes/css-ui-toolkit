@@ -28,6 +28,7 @@ export interface HeaderProps {
     sidebarData?: SidebarItem[];
     title: string;
     logo: string;
+    headerUrl?: string;
 }
 
 export interface RightNavigationProps {

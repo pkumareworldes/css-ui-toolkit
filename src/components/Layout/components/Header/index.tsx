@@ -16,11 +16,18 @@ const Header: React.FC<HeaderProps> = ({
   sidebarData,
   title,
   logo,
+  headerUrl,
 }) => {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
   const handleToggleDrawer = (open: boolean) => {
     setDrawerOpen(open);
+  };
+
+  const handleHeaderClick = () => {
+    if (headerUrl) {
+      window.location.href = headerUrl;
+    }
   };
 
   return (
@@ -35,7 +42,6 @@ const Header: React.FC<HeaderProps> = ({
           backgroundColor: theme.palette.background.default,
         })}
       >
-
         <Container
           maxWidth={false}
           sx={{
@@ -65,7 +71,9 @@ const Header: React.FC<HeaderProps> = ({
               flexGrow: 1,
               ml: { xs: 1, md: 0 },
               justifyContent: { xs: "center", md: "flex-start" },
+              cursor: headerUrl ? "pointer" : "default",
             }}
+            onClick={handleHeaderClick}
           >
             {logo ? (
               <img
