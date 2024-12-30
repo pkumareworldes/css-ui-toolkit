@@ -9,7 +9,6 @@ import { UserMenu } from "./components";
 import MobilePortal from "./MobilePortal";
 import { HeaderProps } from "../../../../types/IHeader";
 import pxToRem from "../../../../helpers/pxToRem";
-import { colors } from "../../../../themes";
 
 const Header: React.FC<HeaderProps> = ({
   RightNavigation,

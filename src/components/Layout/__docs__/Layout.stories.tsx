@@ -25,7 +25,7 @@ const footerData = {
   buildVersionLabel: "Build Version",
   buildVersion: "1.0.0",
   contactLabel: "Contact Us",
-  contactDetails: "support@example.com",
+  contactDetails: "test@test.com",
 };
 
 const sidebarData = [

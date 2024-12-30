@@ -6,7 +6,9 @@ import * as Icons from '@mui/icons-material';
 import { RightNavigationProps, IconName } from '../../../../../../types/IHeader';
 import { rightNavigationData } from '../../data';
 
-const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
+const RightNavigation: React.FC<RightNavigationProps> = ({
+    data = rightNavigationData,
+}) => {
     const getIconComponent = (iconName: IconName) => {
         const IconComponent = Icons[iconName];
         return IconComponent ? <IconComponent /> : null;
@@ -52,10 +54,6 @@ const RightNavigation: React.FC<RightNavigationProps> = ({ data }) => {
             ))}
         </Box>
     );
-};
-
-RightNavigation.defaultProps = {
-    data: rightNavigationData,
 };
 
 export default RightNavigation;
