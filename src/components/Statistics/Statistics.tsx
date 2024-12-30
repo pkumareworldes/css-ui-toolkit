@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Card, CardContent } from '@mui/material';
-import { StatisticsCardProps } from '../../types/statistics';
+import { StatisticsCardProps } from '../../types/IStatistics';
 
 const StatisticsCard: React.FC<StatisticsCardProps> = ({
   title,
@@ -11,10 +11,10 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({
   cssProps
 }) => {
   return (
-    <Card sx={{ ...cssProps, maxWidth: 300, boxShadow: 3, backgroundColor: color }}>
+    <Card sx={{ ...cssProps, boxShadow: 3, width: '100%', backgroundColor: color }}>
       <CardContent>
         {/* Title */}
-        <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 1 }}>
+        <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 1, fontSize: '1rem' }}>
           {title}
         </Typography>
 

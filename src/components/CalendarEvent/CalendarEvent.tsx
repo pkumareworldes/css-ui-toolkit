@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
-import { CalendarEventProps } from "../../types/calendarevent";
+import { CalendarEventProps } from "../../types/ICalendarEvent";
 import { Link } from "react-router-dom"; 
 
 const CalendarEvent: React.FC<CalendarEventProps> = ({
@@ -16,15 +16,15 @@ const CalendarEvent: React.FC<CalendarEventProps> = ({
   const content = (
     <Card
       sx={{
-        backgroundColor: color || "#fff", // Default background color
-        maxWidth: "25rem", 
+        backgroundColor: color || "#fff",
         borderRadius: "0 0.25rem 0.25rem 0", 
         boxShadow: 2,
         display: "flex",
         flexDirection: "column",
         gap: "0.0625rem", 
         borderLeft: `0.25rem solid ${acceptedIconColor || "transparent"}`,
-        cursor: isLink ? "pointer" : "default", 
+        cursor: isLink ? "pointer" : "default",
+        width: "100%", 
       }}
     >
       <CardContent sx={{ display: "flex", flexDirection: "row", gap: "1rem", padding: "0.5rem" }}>

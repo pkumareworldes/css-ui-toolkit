@@ -46,9 +46,5 @@ Default.args = {
   hint: "",
   statisticNumber: 26,
   statisticsPercentage: "98",
-  color: "#DFF6DD", // Set background color to green
-  cssProps: {
-    width: 275,
-    height: 130,
-  },
+  color: "#DFF6DD",
 };
