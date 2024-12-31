@@ -1,9 +1,11 @@
-import { Card, Divider, Grid2 as Grid } from "@mui/material"
 import { MUIChip } from "../Chip";
 import { MUIROF } from "../ReadonlyField";
 import { ISectionWizardViewProps, ISubsection } from "./types";
 import { ChipContainerStyle, ChipTitleStyle } from "./styles";
 import * as Styled from './styles'
+import { Grid } from "../Grid";
+import { Card } from "../Card";
+import { Divider } from "../Divider";
 
 const WizardSubsection = ({ options }: { options: ISubsection }) => {
 
