@@ -7,9 +7,8 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import MenuIcon from "@mui/icons-material/Menu";
-import { styled } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 
-import _ from "../../@lodash/@lodash";
 import { HeaderProps } from "../../types/IHeader";
 
 const AppBar = styled(MuiAppBar)(({ theme }: any) => ({
@@ -28,9 +27,10 @@ const Header = ({
   headerLeftPanel,
   headerRightPanel,
   isMobileNavigationExpanded,
-  isDesktopNavigationExpanded
+  isDesktopNavigationExpanded,
+  branding,
 }: HeaderProps) => {
-  
+
   const HeaderLeftPanel = headerLeftPanel ?? null;
   const HeaderRightPanel = headerRightPanel ?? null;
 
@@ -61,9 +61,7 @@ const Header = ({
   return (
     <>
       <AppBar color="inherit" position="absolute" sx={{ displayPrint: "none" }}>
-        <Toolbar
-          sx={{ backgroundColor: "inherit", mx: { xs: -0.75, sm: -1.5 } }}
-        >
+        <Toolbar sx={{ backgroundColor: "inherit", mx: { xs: -0.75, sm: -1.5 } }}>
           <Stack
             direction="row"
             justifyContent="space-between"
@@ -73,7 +71,7 @@ const Header = ({
               width: "100%",
             }}
           >
-            <Stack direction="row" alignItems="center">
+            <Stack direction="row" alignItems="center" sx={{ width: "100%" }}>
               {!hideNavigation ? (
                 <>
                   <Box
@@ -97,6 +95,49 @@ const Header = ({
                   </Box>
                 </>
               ) : null}
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: { xs: "center", md: "flex-start" },
+                  textAlign: { xs: "center", md: "left" },
+                  flex: 1,
+                  mt: { xs: 1, md: 0 },
+                  pl: { xs: 0, md: 2 },
+                }}
+              >
+                {branding?.appLogo && (
+                  <a
+                    href={branding.appHomeUrl || "#"}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <img
+                      src={branding.appLogo as string}
+                      alt={branding.appTitle}
+                      style={{
+                        height: "40px",
+                        marginRight: "8px",
+                      }}
+                    />
+                  </a>
+                )}
+                {branding?.appTitle && (
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    href={branding.appHomeUrl || "#"}
+                    sx={{
+                      textDecoration: "none",
+                      color: "inherit",
+                      fontWeight: "bold",
+                      display: { xs: "none", md: "block" },
+                    }}
+                  >
+                    {branding.appTitle}
+                  </Typography>
+                )}
+              </Box>
               {HeaderLeftPanel && (
                 <div className="flex flex-grow flex-shrink-0">
                   {HeaderLeftPanel}

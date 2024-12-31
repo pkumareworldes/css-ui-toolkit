@@ -178,9 +178,9 @@ export interface Router {
 }
 
 export interface Branding {
-  title?: string;
-  logo?: React.ReactNode;
-  homeUrl?: string;
+  appTitle?: string;
+  appLogo?: React.ReactNode;
+  appHomeUrl?: string;
 }
 
 export interface NavigationPageItem {

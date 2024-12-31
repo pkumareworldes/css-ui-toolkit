@@ -1,3 +1,5 @@
+import { Branding } from "./ICommon";
+
 export interface RightNavigationItem {
   label: string;
   path?: string;
@@ -28,9 +30,7 @@ export interface SidebarFooterProps {
 }
 
 export interface HeaderProps {
-  appTitle?: string;
-  appName?: string;
-  appLogo?: string;
+  branding?: Branding;
   hideNavigation: boolean;
   toggleNavigationExpanded: () => void;
   disableCollapsibleSidebar: boolean;

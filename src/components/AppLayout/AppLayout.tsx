@@ -125,11 +125,11 @@ const AppLayout = (props: AppLayoutProps) => {
         display: "flex",
         overflow: "hidden",
         height: "100vh",
-        width: "100vw",
         ...sx,
       }}
     >
       <Header
+        branding={branding}
         hideNavigation={hideNavigation}
         disableCollapsibleSidebar={disableCollapsibleSidebar}
         defaultSidebarCollapsed={defaultSidebarCollapsed}

@@ -16,9 +16,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import AppLayout from "../AppLayout";
 
 const branding = {
-  title: "Test Application",
-  logo: "abc",
-  homeUrl:""
+  appTitle: "Test Application",
+  appLogo: "favicon.svg",
+  appHomeUrl:"/test"
 }
 const theme = createTheme({
   cssVariables: {
