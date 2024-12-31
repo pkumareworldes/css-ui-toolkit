@@ -4,10 +4,10 @@ import { Meta, Story } from "@storybook/react";
 import SidebarNavigationDrawer from "../SidebarNavigationDrawer";
 import { SidebarNavigationDrawerProps } from "../../../types/ILayout";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import DescriptionIcon from "@mui/icons-material/Description";
-import LayersIcon from "@mui/icons-material/Layers";
+
 // Define Storybook metadata
 export default {
   title: "Layout/Sidebar",
@@ -44,14 +44,9 @@ Default.args = {
       title: "Main items",
     },
     {
-      segment: "dashboard",
-      title: "Dashboard",
-      icon: <DashboardIcon />,
-    },
-    {
-      segment: "orders",
-      title: "Orders",
-      icon: <ShoppingCartIcon />,
+      segment: "calender",
+      title: "Calender",
+      icon: <CalendarMonthIcon />,
     },
     {
       kind: "divider",
@@ -66,21 +61,16 @@ Default.args = {
       icon: <BarChartIcon />,
       children: [
         {
-          segment: "sales",
-          title: "Sales",
+          segment: "abc",
+          title: "abc",
           icon: <DescriptionIcon />,
         },
         {
-          segment: "traffic",
-          title: "Traffic",
+          segment: "xyz",
+          title: "xyz",
           icon: <DescriptionIcon />,
         },
       ],
-    },
-    {
-      segment: "integrations",
-      title: "Integrations",
-      icon: <LayersIcon />,
-    },
+    }
   ],
 };

@@ -5,14 +5,14 @@ import { StatisticsCardProps } from "../../types/IStatCard";
 const StatisticsCard: React.FC<StatisticsCardProps> = ({
   title,
   hint,
-  statisticNumber,
-  statisticsPercentage,
+  number,
+  percentage,
   color,
-  cssProps,
+  sxStyles,
 }) => {
   return (
     <Card
-      sx={{ ...cssProps, maxWidth: 300, boxShadow: 3, backgroundColor: color }}
+      sx={{ ...sxStyles, maxWidth: 300, boxShadow: 3, backgroundColor: color }}
     >
       <CardContent>
         {/* Title */}
@@ -38,13 +38,13 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({
         >
           {/* Statistic Number */}
           <Typography variant="h4" sx={{ marginRight: 1 }}>
-            {statisticNumber}
+            {number}
           </Typography>
 
           {/* Percentage */}
-          {statisticsPercentage && (
+          {percentage && (
             <Typography variant="body1" sx={{ color: "text.secondary" }}>
-              ({statisticsPercentage}%)
+              ({percentage}%)
             </Typography>
           )}
         </Box>

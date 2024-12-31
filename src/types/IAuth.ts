@@ -1,4 +1,5 @@
 export interface Session {
+  logedIn:boolean,
   user?: {
     id?: string | null;
     name?: string | null;

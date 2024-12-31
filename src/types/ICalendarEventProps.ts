@@ -1,11 +1,12 @@
 import { SxProps } from "@mui/material";
 export interface CalendarEventProps {
-  dateTime: string;
+  time: string;
+  mins: string;
   title: string;
-  subTitle?: string;
+  location?: string;
   color: string;
   priority: "high" | "medium" | "low";
-  link?: boolean;
+  isLink?: boolean;
   onClickHandler: () => void;
   sxStyles?: SxProps;
 }

@@ -4,9 +4,8 @@ import { Meta, Story } from "@storybook/react";
 import { createTheme } from "@mui/material/styles";
 import AppLayoutProvider from "../AppLayoutProvider";
 import { AppLayoutProviderProps } from "../../../types/ILayout";
-import { Branding, Navigation, Router } from "./ICommon";
+import { Branding, Navigation, Router } from "../../../types/ICommon";
 import { headerThemeConfig } from "./layoutProps";
-import Typography from "../../Typography/Typography";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import BarChartIcon from "@mui/icons-material/BarChart";
@@ -16,6 +15,11 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import HomeIcon from "@mui/icons-material/Home";
 import AppLayout from "../AppLayout";
 
+const branding = {
+  title: "Test Application",
+  logo: "abc",
+  homeUrl:""
+}
 const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: "data-eworldes-template-color-scheme",
@@ -54,13 +58,13 @@ const NAVIGATION: Navigation = [
     icon: <BarChartIcon />,
     children: [
       {
-        segment: "sales",
-        title: "Sales",
+        segment: "abc",
+        title: "abc",
         icon: <DescriptionIcon />,
       },
       {
-        segment: "traffic",
-        title: "Traffic",
+        segment: "xyz",
+        title: "xyx",
         icon: <DescriptionIcon />,
       },
     ],
@@ -79,7 +83,7 @@ export default {
 // Template function to create the component with different args
 const Template: Story<AppLayoutProviderProps> = (args) => {
   return (
-    <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION}>
+    <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION} branding={branding}>
       <AppLayout hideNavigation={false} defaultSidebarCollapsed={true}>
         <h1> Test page</h1>
       </AppLayout>

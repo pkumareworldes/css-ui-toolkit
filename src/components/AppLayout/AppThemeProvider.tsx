@@ -164,4 +164,4 @@ function AppThemeProvider(props: AppThemeProviderProps) {
   );
 }
 
-export { AppThemeProvider };
+export default AppThemeProvider;

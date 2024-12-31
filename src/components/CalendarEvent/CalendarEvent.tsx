@@ -1,13 +1,14 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 
 import { CalendarEventProps } from "../../types/ICalendarEventProps";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CalendarEvent = ({
-  dateTime,
+  time,
+  mins,
   title,
-  subTitle,
-  link = false,
+  location,
+  isLink = false,
   ...rest
 }: CalendarEventProps) => {
   const content = (
@@ -60,9 +61,9 @@ const CalendarEvent = ({
   );
 
   // If isLink is true, wrap the entire card with a Link component to make it clickable
-  // if (isLink) {
-  //   return <Link to="/link-target-url">{content}</Link>; // We have to replace with actual link target
-  // }
+  if (isLink) {
+    return <Link to="/link-target-url">{content}</Link>; // We have to replace with actual link target
+  }
 
   return content;
 };

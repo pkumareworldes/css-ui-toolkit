@@ -30,11 +30,11 @@ const AppLayout = (props: AppLayoutProps) => {
 
   const theme = useTheme();
 
-  //const brandingContext = React.useContext(BrandingContext);
+  const brandingContext = React.useContext(BrandingContext);
   const navigationContext = React.useContext(NavigationContext);
   const appWindowContext = React.useContext(WindowContext);
 
-  //const branding = brandingContext;
+  const branding = brandingContext;
   const navigation = navigationContext;
 
   const [isDesktopNavigationExpanded, setIsDesktopNavigationExpanded] =
@@ -114,12 +114,9 @@ const AppLayout = (props: AppLayoutProps) => {
   const hasDrawerTransitions =
     isOverSmViewport && (disableCollapsibleSidebar || !isUnderMdViewport);
 
-  //   const ToolbarActionsSlot = slots?.toolbarActions ?? ToolbarActions;
-  //   const ToolbarAccountSlot = slots?.toolbarAccount ?? Account;
-  //   const SidebarFooterSlot = slots?.sidebarFooter ?? null;
-
   const layoutRef = React.useRef<Element | null>(null);
 
+  console.log("branding", branding);
   return (
     <Box
       ref={layoutRef}
@@ -178,6 +175,7 @@ const AppLayout = (props: AppLayoutProps) => {
         >
           {children}
         </Box>
+        {/* TODO Add Footer */}
       </Box>
     </Box>
   );

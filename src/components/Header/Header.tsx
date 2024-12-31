@@ -30,6 +30,7 @@ const Header = ({
   isMobileNavigationExpanded,
   isDesktopNavigationExpanded
 }: HeaderProps) => {
+  
   const HeaderLeftPanel = headerLeftPanel ?? null;
   const HeaderRightPanel = headerRightPanel ?? null;
 
