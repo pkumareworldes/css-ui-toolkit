@@ -212,7 +212,7 @@ const Header: React.FC<HeaderProps> = ({
           </Stack>
 
         </Stack>
-        {!userData?.isLoggedIn && (
+        {userData && !userData?.isLoggedIn && (
           <Box sx={{ ml: 2 }}>
             <Button variant="contained" color="primary" onClick={userData?.loginHandler}>
               {userData?.loginLabel ?? 'Login'}
