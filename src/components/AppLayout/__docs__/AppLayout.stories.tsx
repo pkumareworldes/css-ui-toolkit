@@ -2,7 +2,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { createTheme } from "@mui/material/styles";
 import AppLayoutProvider from "../AppLayoutProvider";
-import { AppLayoutProviderProps } from "../../../types/ILayout";
+import { AppLayoutProviderProps } from "../ILayout";
 import { Branding, Navigation } from "../../../types/ICommon";
 import { headerThemeConfig } from "./layoutProps";
 import DashboardIcon from "@mui/icons-material/Dashboard";

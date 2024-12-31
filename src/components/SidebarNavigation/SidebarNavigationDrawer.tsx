@@ -7,7 +7,7 @@ import {
   getDrawerWidthTransitionMixin,
   getDrawerSxTransitionMixin,
 } from "../../utils";
-import { SidebarNavigationDrawerProps } from "../../types/ILayout";
+import { SidebarNavigationDrawerProps } from "./ISidebar";
 
 const SidebarNavigationDrawer = ({
   sidebarExpandedWidth = 320,

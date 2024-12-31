@@ -5,8 +5,8 @@ import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import CssBaseline from "@mui/material/CssBaseline";
 import invariant from "invariant";
 import { useLocalStorageState } from "../../hooks/useLocalStorageState";
-import { PaletteModeContext } from "../../context";
-import type { AppTheme } from "../../types/ILayout";
+import { PaletteModeContext } from "../../context/Context";
+import type { AppTheme } from "./ILayout";
 
 const COLOR_SCHEME_ATTRIBUTE = "data-eworldes-template-color-scheme";
 const COLOR_SCHEME_STORAGE_KEY = "eworldes-template-color-scheme";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
 import CheckboxWrapper from "../Checkbox";
-import { CheckboxWrapperProps } from "../../../types/ICheckbox";
+import { CheckboxWrapperProps } from "../ICheckbox";
 import { Checkbox } from "@mui/material";
 
 export default {

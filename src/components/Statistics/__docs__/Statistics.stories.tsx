@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import StatisticsComponent from "../Statistics";
-import { StatisticsCardProps } from "../../../types/IStatCard";
+import { StatisticsCardProps } from "../IStatCard";
 
 // Define Storybook metadata
 export default {

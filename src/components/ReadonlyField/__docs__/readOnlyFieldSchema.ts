@@ -1,4 +1,4 @@
-import { IReadOnlyFeild } from "../../../types/IReadOnlyField";
+import { IReadOnlyFeild } from "../IReadOnlyField";
 export const defaultROFProps: IReadOnlyFeild = {
   fieldName: "Date of birth",
   mode: "light",

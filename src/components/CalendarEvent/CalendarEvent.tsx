@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 
-import { CalendarEventProps } from "../../types/ICalendarEventProps";
+import { CalendarEventProps } from "./ICalendarEventProps";
 import { Link } from "react-router-dom";
 
 const CalendarEvent = ({

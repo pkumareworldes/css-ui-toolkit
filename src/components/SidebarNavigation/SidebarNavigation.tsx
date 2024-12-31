@@ -14,8 +14,8 @@ import type {} from "@mui/material/themeCssVarsAugmentation";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Link } from "../Link";
-import { RouterContext } from "../../context";
-import type { SidebarNavigationProps } from "../../types/ILayout";
+import { RouterContext } from "../../context/Context";
+import type { SidebarNavigationProps } from "./ISidebar";
 
 import {
   getItemTitle,

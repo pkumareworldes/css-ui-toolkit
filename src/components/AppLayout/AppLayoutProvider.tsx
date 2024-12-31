@@ -7,9 +7,9 @@ import {
   RouterContext,
   UserDataContext,
   WindowContext,
-} from "../../context";
+} from "../../context/Context";
 import AppThemeProvider from "./AppThemeProvider";
-import { AppLayoutProviderProps } from "../../types/ILayout";
+import { AppLayoutProviderProps } from "./ILayout";
 
 export const AuthenticationContext = React.createContext<Authentication | null>(
   null,

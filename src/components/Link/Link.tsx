@@ -1,5 +1,5 @@
 import * as React from "react";
-import { RouterContext } from "../../context";
+import { RouterContext } from "../../context/Context";
 import { LinkProps } from "../../types/ICommon";
 
 const Link = React.forwardRef(function Link(

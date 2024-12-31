@@ -1,7 +1,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { MultiChip, Chip } from "../index";
-import { IChipProp } from "../../../types/IChip";
+import { IChipProp } from "../IChip";
 import { DefaultChipProps, multiChipsList } from "./chipSchema";
 // Default metadata for the story
 export default {

@@ -5,7 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 import { UserData } from "../../types/ICommon";
 import pxToRem from "../../helpers/pxToRem";
-import { HeaderProps } from "../../types/IHeader";
+import { HeaderProps } from "./IHeader";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   borderWidth: 0,

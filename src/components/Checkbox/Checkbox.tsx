@@ -1,6 +1,6 @@
 import React from "react";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { CheckboxWrapperProps } from "../../types/ICheckbox"; // Import the interface
+import { CheckboxWrapperProps } from "./ICheckbox"; // Import the interface
 
 const CheckboxWrapper: React.FC<CheckboxWrapperProps> = ({
   label,

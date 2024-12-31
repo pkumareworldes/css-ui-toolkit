@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
 import SelectWrapper from "../Select";
-import { SelectWrapperProps } from "../../../types/ISelect";
+import { SelectWrapperProps } from "../ISelect";
 
 // Define Storybook metadata
 export default {

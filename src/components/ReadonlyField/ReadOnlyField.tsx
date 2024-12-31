@@ -1,4 +1,4 @@
-import { IReadOnlyFeild } from "../../types/IReadOnlyField";
+import { IReadOnlyFeild } from "./IReadOnlyField";
 import BoxBasic from "../Box/Box";
 import Typography from "../Typography/Typography";
 import { Chip } from "../Chip";

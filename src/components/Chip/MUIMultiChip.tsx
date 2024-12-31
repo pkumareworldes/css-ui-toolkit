@@ -1,6 +1,6 @@
 import Chip from "./MUIChip";
 import { Stack } from "@mui/material";
-import { IChipProp } from "../../types/IChip";
+import { IChipProp } from "./IChip";
 
 /**
  *

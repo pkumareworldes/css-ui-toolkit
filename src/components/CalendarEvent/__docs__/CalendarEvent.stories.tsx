@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import CalendarEvent from "../CalendarEvent"; // Import your CalendarEvent component
-import { CalendarEventProps } from "../../../types/calendarevent"; // Import the interface for typing
+import { CalendarEventProps } from "../ICalendarEventProps"; // Import the interface for typing
 
 // Define Storybook metadata (this is the default export that Storybook is looking for)
 const meta: Meta = {

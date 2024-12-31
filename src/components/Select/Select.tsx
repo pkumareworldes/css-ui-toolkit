@@ -6,7 +6,7 @@ import {
   FormControl,
   FormHelperText,
 } from "@mui/material";
-import { SelectWrapperProps } from "../../types/ISelect";
+import { SelectWrapperProps } from "./ISelect";
 
 const SelectWrapper: React.FC<SelectWrapperProps> = ({
   label,

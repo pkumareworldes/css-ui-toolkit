@@ -1,7 +1,7 @@
 import { Toolbar, Link, Box, Typography } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { memo } from "react";
-import { FooterProps } from "../../types/IFooter";
+import { FooterProps } from "./IFooter";
 import pxToRem from '../../helpers/pxToRem';
 
 const Footer = (props: FooterProps) => {

@@ -1,5 +1,5 @@
 import Chip from "@mui/material/Chip";
-import { IChip } from "../../types/IChip";
+import { IChip } from "./IChip";
 
 /**
  *

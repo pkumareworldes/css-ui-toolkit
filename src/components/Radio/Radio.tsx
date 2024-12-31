@@ -1,6 +1,6 @@
 import React from "react";
 import { Radio, FormControlLabel } from "@mui/material";
-import { RadioWrapperProps } from "../../types/IRadio";
+import { RadioWrapperProps } from "./IRadio";
 
 const RadioWrapper: React.FC<RadioWrapperProps> = ({
   label,

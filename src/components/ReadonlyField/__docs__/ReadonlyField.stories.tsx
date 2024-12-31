@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import ReadOnlyField from "../ReadOnlyField";
-import { IReadOnlyFeild } from "../../../types/IReadOnlyField";
+import { IReadOnlyFeild } from "../IReadOnlyField";
 import {
   defaultROFProps,
   LinkROFProps,

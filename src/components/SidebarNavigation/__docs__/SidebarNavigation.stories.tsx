@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import SidebarNavigationDrawer from "../SidebarNavigationDrawer";
-import { SidebarNavigationDrawerProps } from "../../../types/ILayout";
+import { SidebarNavigationDrawerProps } from "../ISidebar";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import BarChartIcon from "@mui/icons-material/BarChart";

@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import Footer from "../Footer";
-import { FooterProps } from "../../../types/IFooter";
+import { FooterProps } from "../IFooter";
 import { footerThemeConfig } from "./footerProps";
 import Typography from "../../Typography/Typography";
 

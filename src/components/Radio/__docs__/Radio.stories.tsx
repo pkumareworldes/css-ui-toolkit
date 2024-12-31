@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Meta, Story } from "@storybook/react";
 import RadioWrapper from "../Radio";
-import { RadioWrapperProps } from "../../../types/IRadio";
+import { RadioWrapperProps } from "../IRadio";
 
 export default {
   title: "Components/RadioWrapper",

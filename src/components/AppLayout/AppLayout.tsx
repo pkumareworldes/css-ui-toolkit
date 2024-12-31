@@ -9,9 +9,9 @@ import {
   UserDataContext,
   NavigationContext,
   WindowContext,
-} from "../../context";
+} from "../../context/Context";
 
-import { AppLayoutProps } from "../../types/ILayout";
+import { AppLayoutProps } from "./ILayout";
 import { Header } from "../Header";
 import { SidebarNavigationDrawer } from "../SidebarNavigation";
 import Footer from "../Footer/Footer";

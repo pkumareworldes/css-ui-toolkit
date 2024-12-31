@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Card, CardContent } from "@mui/material";
-import { StatisticsCardProps } from "../../types/IStatCard";
+import { StatisticsCardProps } from "./IStatCard";
 
 const StatisticsCard: React.FC<StatisticsCardProps> = ({
   title,

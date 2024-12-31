@@ -2,7 +2,7 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import Header from "../Header";
-import { HeaderProps } from "../../../types/IHeader";
+import { HeaderProps } from "../IHeader";
 import { headerThemeConfig } from "./headerProps";
 import Typography from "../../Typography/Typography";
 import DashboardIcon from "@mui/icons-material/Dashboard";

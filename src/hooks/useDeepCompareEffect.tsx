@@ -1,9 +1,6 @@
 import { useRef, useEffect } from "react";
 import deepEqual from "lodash/isEqual";
 
-/**
- * https://github.com/kentcdodds/use-deep-compare-effect
- */
 function checkDeps(deps: any) {
   if (!deps || !deps.length) {
     throw new Error(
