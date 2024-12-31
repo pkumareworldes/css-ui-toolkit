@@ -1,4 +1,4 @@
-import { Branding } from "./ICommon";
+import { Branding, UserData } from "./ICommon";
 
 export interface RightNavigationItem {
   label: string;
@@ -29,8 +29,10 @@ export interface SidebarFooterProps {
   mini: boolean;
 }
 
+
 export interface HeaderProps {
   branding?: Branding;
+  userData?: UserData;
   hideNavigation: boolean;
   toggleNavigationExpanded: () => void;
   disableCollapsibleSidebar: boolean;

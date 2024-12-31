@@ -183,6 +183,26 @@ export interface Branding {
   appHomeUrl?: string;
 }
 
+
+export interface UserMenuItem {
+  label: string;
+  handler: () => void;
+}
+
+export interface UserData {
+  isLoggedIn: boolean;
+  loginLabel?: string;
+  logoutLabel?: string;
+  userDetails: {
+    firstname: string;
+    lastname: string;
+    icon?: string;
+    settingsMenu: UserMenuItem[];
+  };
+  loginHandler: () => void;
+  logoutHandler: () => void;
+}
+
 export interface NavigationPageItem {
   kind?: "page";
   segment?: string;

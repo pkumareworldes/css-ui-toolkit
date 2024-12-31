@@ -1,10 +1,9 @@
-// Storybook configuration file
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 import { createTheme } from "@mui/material/styles";
 import AppLayoutProvider from "../AppLayoutProvider";
 import { AppLayoutProviderProps } from "../../../types/ILayout";
-import { Branding, Navigation, Router } from "../../../types/ICommon";
+import { Branding, Navigation } from "../../../types/ICommon";
 import { headerThemeConfig } from "./layoutProps";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -14,18 +13,43 @@ import LayersIcon from "@mui/icons-material/Layers";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import HomeIcon from "@mui/icons-material/Home";
 import AppLayout from "../AppLayout";
+import { UserData } from "../../../types/ICommon";
+
+const sampleUserData: UserData = {
+  isLoggedIn: true,
+  userDetails: {
+    firstname: "John",
+    lastname: "Doe",
+    icon: "",
+    settingsMenu: [
+      {
+        label: "Profile",
+        handler: () => alert("Navigating to profile"),
+      },
+      {
+        label: "Logout",
+        handler: () => alert("Logging out"),
+      },
+    ],
+  },
+  loginHandler: () => alert("Logging in"),
+  logoutHandler: () => alert("Logging in"),
+};
 
 const branding = {
   appTitle: "Test Application",
   appLogo: "favicon.svg",
-  appHomeUrl: "/test"
-}
+  appHomeUrl: "/test",
+};
 
-const footer = [{
-  label: 'Contact Us',
-  value: 'test@test.com',
-  isLink: false,
-}]
+const footer = [
+  {
+    label: "Contact Us",
+    value: "test@test.com",
+    isLink: false,
+  },
+];
+
 const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: "data-eworldes-template-color-scheme",
@@ -58,7 +82,8 @@ const NAVIGATION: Navigation = [
     segment: "calender",
     title: "Calender",
     icon: <CalendarMonthIcon />,
-  }, {
+  },
+  {
     segment: "reports",
     title: "Reports",
     icon: <BarChartIcon />,
@@ -92,7 +117,7 @@ export default {
 // Template function to create the component with different args
 const Template: Story<AppLayoutProviderProps> = (args) => {
   return (
-    <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION} branding={branding}>
+    <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION} branding={branding} userData= {sampleUserData}>
       <AppLayout hideNavigation={false} defaultSidebarCollapsed={true} footerBottomPanel={footer}>
         <h1> Test page</h1>
       </AppLayout>

@@ -3,7 +3,7 @@ import { Theme } from "@mui/material/styles";
 import { SidebarItem } from "./ISidebar";
 import { HeaderProps } from "./IHeader";
 import { PageHeaderProps } from "./IPageHeader";
-import { Branding, Navigation, Router } from "./ICommon";
+import { Branding, Navigation, Router, UserData } from "./ICommon";
 import { Session, Authentication } from "./IAuth";
 import { SxProps } from "@mui/material";
 
@@ -22,7 +22,8 @@ export interface LayoutProps {
 export interface AppLayoutProviderProps {
   children: React.ReactNode;
   theme?: AppTheme;
-  branding?: Branding | null;
+  branding?: Branding | undefined;
+  userData? : UserData | undefined;
   navigation?: Navigation;
   router?: Router;
   session?: Session | null;

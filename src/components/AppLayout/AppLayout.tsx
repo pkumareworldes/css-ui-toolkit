@@ -6,6 +6,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import type {} from "@mui/material/themeCssVarsAugmentation";
 import {
   BrandingContext,
+  UserDataContext,
   NavigationContext,
   WindowContext,
 } from "../../context";
@@ -33,10 +34,12 @@ const AppLayout = (props: AppLayoutProps) => {
   const theme = useTheme();
 
   const brandingContext = React.useContext(BrandingContext);
+  const userDataContext = React.useContext(UserDataContext);
   const navigationContext = React.useContext(NavigationContext);
   const appWindowContext = React.useContext(WindowContext);
 
   const branding = brandingContext;
+  const userData = userDataContext;
   const navigation = navigationContext;
 
   const [isDesktopNavigationExpanded, setIsDesktopNavigationExpanded] =
@@ -132,6 +135,7 @@ const AppLayout = (props: AppLayoutProps) => {
     >
       <Header
         branding={branding}
+        userData={userData}
         hideNavigation={hideNavigation}
         disableCollapsibleSidebar={disableCollapsibleSidebar}
         defaultSidebarCollapsed={defaultSidebarCollapsed}
