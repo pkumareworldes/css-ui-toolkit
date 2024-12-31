@@ -2,7 +2,7 @@ import React from "react";
 import {ComponentStory, Meta } from "@storybook/react";
 import Stack from "@mui/material/Stack";
 
-import Toggle from "./Toogle";
+import Toggle from "../Toogle";
 
 
 export default {

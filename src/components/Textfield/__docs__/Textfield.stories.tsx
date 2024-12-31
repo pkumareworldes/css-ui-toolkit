@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import TextField from "./Textfield.Component";
+import TextField from "../Textfield.Component";
 
 export default {
   title: "TextField",

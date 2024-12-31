@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import Autocomplete from "../AutoComplete.Component.tsx";
-import { AutocompleteOption } from "../Autocomplete.Interface.ts";
 import { AutocompleteValue, AutocompleteChangeReason } from "@mui/material";
 
 export default {
