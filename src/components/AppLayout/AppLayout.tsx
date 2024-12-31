@@ -13,6 +13,7 @@ import {
 import { AppLayoutProps } from "../../types/ILayout";
 import { Header } from "../Header";
 import { SidebarNavigationDrawer } from "../SidebarNavigation";
+import Footer from "../Footer/Footer";
 
 export interface SidebarFooterProps {
   mini: boolean;
@@ -25,6 +26,7 @@ const AppLayout = (props: AppLayoutProps) => {
     defaultSidebarCollapsed = false,
     hideNavigation = false,
     sidebarExpandedWidth = 320,
+    footerBottomPanel,
     sx,
   } = props;
 
@@ -175,7 +177,7 @@ const AppLayout = (props: AppLayoutProps) => {
         >
           {children}
         </Box>
-        {/* TODO Add Footer */}
+        <Footer footerBottomPanel={footerBottomPanel}/>
       </Box>
     </Box>
   );

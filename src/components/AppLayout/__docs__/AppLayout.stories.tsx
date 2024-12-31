@@ -18,8 +18,14 @@ import AppLayout from "../AppLayout";
 const branding = {
   appTitle: "Test Application",
   appLogo: "favicon.svg",
-  appHomeUrl:"/test"
+  appHomeUrl: "/test"
 }
+
+const footer = [{
+  label: 'Contact Us',
+  value: 'test@test.com',
+  isLink: false,
+}]
 const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: "data-eworldes-template-color-scheme",
@@ -52,7 +58,7 @@ const NAVIGATION: Navigation = [
     segment: "calender",
     title: "Calender",
     icon: <CalendarMonthIcon />,
-  },{
+  }, {
     segment: "reports",
     title: "Reports",
     icon: <BarChartIcon />,
@@ -75,6 +81,9 @@ const NAVIGATION: Navigation = [
 export default {
   title: "Layout/AppLayout",
   component: AppLayoutProvider,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {
     footerTheme: { ...headerThemeConfig },
   },
@@ -84,7 +93,7 @@ export default {
 const Template: Story<AppLayoutProviderProps> = (args) => {
   return (
     <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION} branding={branding}>
-      <AppLayout hideNavigation={false} defaultSidebarCollapsed={true}>
+      <AppLayout hideNavigation={false} defaultSidebarCollapsed={true} footerBottomPanel={footer}>
         <h1> Test page</h1>
       </AppLayout>
     </AppLayoutProvider>

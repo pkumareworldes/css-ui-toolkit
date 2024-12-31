@@ -36,6 +36,7 @@ export interface AppLayoutProps {
   defaultSidebarCollapsed?: boolean;
   hideNavigation?: boolean;
   sidebarExpandedWidth?: number;
+  footerBottomPanel?: any,
   // slots?: AppLayoutSlots;
   // slotProps?: AppLayoutSlotProps;
   sx?: SxProps;

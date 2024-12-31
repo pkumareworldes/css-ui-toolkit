@@ -49,7 +49,7 @@ const darkText = {
 
 export const footerThemeConfig = {
   palette: {
-    type: "light",
+    type: "dark",
     text: lightText,
     common: {
       black: "rgb(17, 24, 39)",
