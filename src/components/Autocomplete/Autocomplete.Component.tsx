@@ -6,7 +6,7 @@ import {
   FormHelperText,
   AutocompleteChangeReason,
 } from "@mui/material";
-import AutocompleteProps, { AutocompleteOption } from "./Autocomplete.Interface.ts";
+import AutocompleteProps, { AutocompleteOption } from "./AutocompleteInterface";
 
 const Autocomplete = ({
   options,
