@@ -1,40 +1,53 @@
 import { Canvas, Meta } from "@storybook/blocks";
 import Example from "./Example.tsx";
-import * as Button from "./Button.stories.tsx";
+import * as TextField from "./TextField.stories.tsx";
 
-<Meta of={Button} title="Button" />
+<Meta of={TextField} title="TextField" />
 
-# Button
+# TextField
 
-Button component with different props.
+TextField component with flexible props for input, selection, and customization.
 
 #### Example
 
-<Canvas of={Button.Primary} />
+<Canvas of={TextField.Default} />
 
 ## Usage
 
-```ts
-import {Button} from "sld-ui";
+```tsx
+import { TextField } from "sld-ui";
 
 const Example = () => {
   return (
-      <Button
-        size={"small"}
-        text={"Button"}
-        onClick={()=> console.log("Clicked")}
-        primary
-      />
+    <TextField
+      label="Username"
+      value="JohnDoe"
+      onChange={(event) => console.log(event.target.value)}
+      placeholder="Enter your username"
+      helperText="Your unique username"
+      variant="outlined"
+      size="medium"
+    />
   );
 };
 
 export default Example;
-```
 
 #### Arguments
-
-- **text** _`() => void`_ - A string that represents the text content of the button.
-- **primary** - A boolean indicating whether the button should have a primary styling or not. Typically, a primary button stands out as the main action in a user interface.
-- **disabled** - A boolean indicating whether the button should be disabled or not. When disabled, the button cannot be clicked or interacted with.
-- **size** - A string with one of three possible values: "small," "medium," or "large." It defines the size or dimensions of the button.
-- **onClick** - A function that is called when the button is clicked. It receives a MouseEventHandler for handling the click event on the button element.
+- label string - The label displayed above the input field.
+- value string | number - The current value of the input field.
+- onChange (event: React.ChangeEvent<HTMLInputElement>) => void - A callback function triggered when the input value changes. It receives the change event as an argument.
+- placeholder string - Placeholder text displayed when the input is empty.
+- type string - Specifies the type of input (e.g., "text", "password", "email"). Default is "text".
+- disabled boolean - Disables the input field, preventing user interaction. Default is false.
+- helperText string - Additional text displayed below the input field for context or instructions.
+- variant string - Specifies the style of the text field. Possible values: "outlined", "filled", "standard". Default is "outlined".
+- multiline boolean - Enables multiline input. Default is false.
+- rows number - Sets the number of rows for multiline input.
+- select boolean - Enables a dropdown menu instead of a standard input field. Default is false.
+- options Array<{ label: string; value: string | number }> - An array of options for the dropdown menu. Each option should have a label and value.
+- size string - Specifies the size of the input field. Possible values: "small", "medium". Default is "medium".
+- margin string - Defines the margin around the input field. Possible values: "none", "dense", "normal". Default is "none".
+- width string - Sets the width of the input field. Default is "100%".
+- height string - Sets the height of the input field. Optional.
+- ...rest object - Additional props passed to the underlying MUI TextField component.
