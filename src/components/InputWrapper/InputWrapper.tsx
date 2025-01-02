@@ -10,7 +10,7 @@ import {
   FormHelperText,
   OutlinedInput
 } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info'; // Correct import
+import InfoIcon from '@mui/icons-material/Info';
 import { InputFieldWrapperProps } from '../../types/IInputWrapperProps';
 
 const InputFieldWrapper: React.FC<InputFieldWrapperProps> = ({
