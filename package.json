@@ -1,6 +1,6 @@
 {
   "name": "@eworldes/ui-toolkit",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Child service support",
   "scripts": {
     "format": "prettier --write --parser typescript '**/*.{ts,tsx}'",
@@ -85,8 +85,6 @@
     "@mui/material": "^6.2.1",
     "invariant": "^2.2.4",
     "is-lite": "^1.2.1",
-    "lodash": "^4.17.21",
-    "path-to-regexp": "^8.2.0",
-    "react-custom-scrollbars-2": "^4.5.0"
+    "path-to-regexp": "^8.2.0"
   }
 }

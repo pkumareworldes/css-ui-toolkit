@@ -2,9 +2,7 @@ import * as React from "react";
 import { createTheme as createMuiTheme, Theme } from "@mui/material/styles";
 import { Authentication, Session } from "../../types/IAuth";
 import {
-  BrandingContext,
   NavigationContext,
-  RouterContext,
   WindowContext,
 } from "../../context/Context";
 import AppThemeProvider from "./AppThemeProvider";
@@ -29,29 +27,17 @@ const AppLayoutProvider = (props: AppLayoutProviderProps) => {
   const {
     children,
     theme = createTheme(),
-    branding,
     navigation = [],
-    router = null,
-    authentication = null,
-    session = null,
     window: appWindow,
   } = props;
 
   return (
     <WindowContext.Provider value={appWindow}>
-      <AuthenticationContext.Provider value={authentication}>
-        <SessionContext.Provider value={session}>
-          <RouterContext.Provider value={router}>
-            <AppThemeProvider theme={theme} window={appWindow}>
-              <BrandingContext.Provider value={branding}>
-                  <NavigationContext.Provider value={navigation}>
-                    {children}
-                  </NavigationContext.Provider>
-              </BrandingContext.Provider>
-            </AppThemeProvider>
-          </RouterContext.Provider>
-        </SessionContext.Provider>
-      </AuthenticationContext.Provider>
+      <AppThemeProvider theme={theme} window={appWindow}>
+          <NavigationContext.Provider value={navigation}>
+            {children}
+          </NavigationContext.Provider>
+      </AppThemeProvider>
     </WindowContext.Provider>
   );
 };

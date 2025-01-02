@@ -1,6 +1,5 @@
 import { Theme } from "@mui/material/styles";
-import { Branding, Navigation, Router } from "../../types/ICommon";
-import { Session, Authentication } from "../../types/IAuth";
+import { Navigation } from "../../types/ICommon";
 import { SxProps } from "@mui/material";
 
 export type AppTheme = Theme | { light: Theme; dark: Theme };
@@ -8,11 +7,7 @@ export type AppTheme = Theme | { light: Theme; dark: Theme };
 export interface AppLayoutProviderProps {
   children: React.ReactNode;
   theme?: AppTheme;
-  branding?: Branding | undefined;
   navigation?: Navigation;
-  router?: Router;
-  session?: Session | null;
-  authentication?: Authentication | null;
   window?: Window;
 }
 

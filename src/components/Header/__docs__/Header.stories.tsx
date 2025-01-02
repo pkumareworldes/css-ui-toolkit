@@ -4,6 +4,7 @@ import { Meta, Story } from "@storybook/react";
 import Header from "../Header";
 import { HeaderProps } from "../IHeader";
 import { headerThemeConfig } from "./headerProps";
+import {Stack} from "../../Stack";
 import Typography from "../../Typography/Typography";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -20,7 +21,26 @@ export default {
 } as Meta;
 
 // Template function to create the component with different args
-const Template: Story<HeaderProps> = (args) => <Header {...args} />;
+const Template: Story<HeaderProps> = (args) => {
+  const HeaderView = () => {
+    return (
+      <>
+       <Stack  direction="row" alignItems="center">
+        <h6>Left</h6>
+        <h6>right</h6>
+        </Stack>
+        <Stack  direction="row" alignItems="center">
+        <h6>Left</h6>
+        <h6>right</h6>
+      </Stack>
+      </>
+     
+    )
+  }
+  return (
+    <Header {...args} sxStyle={{backgroundColor:'#19857b'}} toolbarView={<HeaderView/>}/>
+  )
+};
 
 // Define the default story with sample props
 export const Default = Template.bind({});

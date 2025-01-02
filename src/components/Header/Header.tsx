@@ -1,10 +1,9 @@
 import React, { memo, useCallback } from "react";
-import { AppBar, Box, IconButton, Stack, Toolbar, Tooltip, Typography } from "@mui/material";
+import { AppBar, Box, IconButton, Stack, Toolbar, Tooltip } from "@mui/material";
+import {styled} from "@mui/material/styles";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import MenuIcon from "@mui/icons-material/Menu";
 import { HeaderProps } from "./IHeader";
-import { ThemeProvider, styled } from "../AppLayout";
-import useCreateTheme from "../../hooks/useCreateTheme";
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   borderWidth: 0,
@@ -22,12 +21,9 @@ const Header: React.FC<HeaderProps> = ({
   toolbarView,
   isMobileNavigationExpanded,
   isDesktopNavigationExpanded,
-  headerTheme,
-  branding,
   sxStyle
 }) => {
   const ToolbarView = toolbarView ?? null;
-  const theme = useCreateTheme(headerTheme || undefined);
   const getMenuIcon = useCallback(
     (isExpanded: boolean) => {
       const expandMenuActionText = "Expand";
@@ -53,12 +49,35 @@ const Header: React.FC<HeaderProps> = ({
   );
 
   return (
-    <ThemeProvider theme={theme}>
       <AppBarStyled 
         position="absolute" 
         sx={{ displayPrint: "none", ...sxStyle }}
       >
         <Toolbar sx={{ backgroundColor: "inherit", mx: { xs: -0.75, sm: -1.5 } }}>
+          {!hideNavigation ? (
+              <>
+                <Box
+                  sx={{
+                    mr: { sm: disableCollapsibleSidebar ? 0 : 1 },
+                    display: { md: "none" },
+                  }}
+                >
+                  {getMenuIcon(isMobileNavigationExpanded)}
+                </Box>
+                <Box
+                  sx={{
+                    display: {
+                      xs: "none",
+                      md: disableCollapsibleSidebar ? "none" : "block",
+                    },
+                    mr: disableCollapsibleSidebar ? 0 : 1,
+                  }}
+                >
+                  {getMenuIcon(isDesktopNavigationExpanded)}
+                </Box>
+              </>
+            ) : null
+          }
           <Stack
             direction="row"
             justifyContent="space-between"
@@ -68,73 +87,10 @@ const Header: React.FC<HeaderProps> = ({
               width: "100%",
             }}
           >
-            <Stack direction="row" alignItems="center">
-              {!hideNavigation ? (
-                <>
-                  <Box
-                    sx={{
-                      mr: { sm: disableCollapsibleSidebar ? 0 : 1 },
-                      display: { md: "none" },
-                    }}
-                  >
-                    {getMenuIcon(isMobileNavigationExpanded)}
-                  </Box>
-                  <Box
-                    sx={{
-                      display: {
-                        xs: "none",
-                        md: disableCollapsibleSidebar ? "none" : "block",
-                      },
-                      mr: disableCollapsibleSidebar ? 0 : 1,
-                    }}
-                  >
-                    {getMenuIcon(isDesktopNavigationExpanded)}
-                  </Box>
-                </>
-              ) : null}
-              {branding?.appLogo && (
-                    <a
-                      href={branding.appHomeUrl || "#"}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <img
-                        src={branding.appLogo as string}
-                        alt={branding.appTitle}
-                        style={{
-                          height: "40px",
-                          marginRight: "8px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {branding?.appTitle && (
-                    <Typography
-                      variant="h6"
-                      noWrap
-                      component="a"
-                      href={branding.appHomeUrl || "#"}
-                      sx={{
-                        textDecoration: "none",
-                        color: "inherit",
-                        fontWeight: "bold",
-                        display: { xs: "none", md: "block" },
-                      }}
-                    >
-                      {branding.appTitle}
-                    </Typography>
-                  )}
-                </Stack>
-                <Stack direction="row" justifyContent="justify-between" alignItems ="center">
-                  {ToolbarView && (
-                    <div className="flex flex-grow flex-shrink-0">
-                      {ToolbarView}
-                    </div> 
-                  )}
-                </Stack>
+              {ToolbarView && ( ToolbarView )}
           </Stack>
         </Toolbar>
       </AppBarStyled>
-    </ThemeProvider>
   );
 };
 

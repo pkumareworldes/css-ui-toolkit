@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import type {} from "@mui/material/themeCssVarsAugmentation";
-import Container from '@mui/material/Container';
+
 import {
   BrandingContext,
   NavigationContext,
