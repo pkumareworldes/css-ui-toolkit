@@ -4,9 +4,9 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import type {} from "@mui/material/themeCssVarsAugmentation";
+import Container from '@mui/material/Container';
 import {
   BrandingContext,
-  UserDataContext,
   NavigationContext,
   WindowContext,
 } from "../../context/Context";
@@ -27,19 +27,20 @@ const AppLayout = (props: AppLayoutProps) => {
     defaultSidebarCollapsed = false,
     hideNavigation = false,
     sidebarExpandedWidth = 320,
-    footerBottomPanel,
+    footerView,
+    headerTheme,
+    footerTheme,
+    toolbarView,
     sx,
   } = props;
 
   const theme = useTheme();
 
   const brandingContext = React.useContext(BrandingContext);
-  const userDataContext = React.useContext(UserDataContext);
   const navigationContext = React.useContext(NavigationContext);
   const appWindowContext = React.useContext(WindowContext);
 
   const branding = brandingContext;
-  const userData = userDataContext;
   const navigation = navigationContext;
 
   const [isDesktopNavigationExpanded, setIsDesktopNavigationExpanded] =
@@ -47,6 +48,7 @@ const AppLayout = (props: AppLayoutProps) => {
   const [isMobileNavigationExpanded, setIsMobileNavigationExpanded] =
     React.useState(false);
 
+  const FooterView = footerView ?? null;
   const isUnderMdViewport = useMediaQuery(
     theme.breakpoints.down("md"),
     appWindowContext && {
@@ -121,7 +123,6 @@ const AppLayout = (props: AppLayoutProps) => {
 
   const layoutRef = React.useRef<Element | null>(null);
 
-  console.log("branding", branding);
   return (
     <Box
       ref={layoutRef}
@@ -135,8 +136,9 @@ const AppLayout = (props: AppLayoutProps) => {
     >
       <Header
         branding={branding}
-        userData={userData}
         hideNavigation={hideNavigation}
+        headerTheme={headerTheme}
+        toolbarView={toolbarView}
         disableCollapsibleSidebar={disableCollapsibleSidebar}
         defaultSidebarCollapsed={defaultSidebarCollapsed}
         toggleNavigationExpanded={toggleNavigationExpanded}
@@ -180,8 +182,12 @@ const AppLayout = (props: AppLayoutProps) => {
           }}
         >
           {children}
+          {FooterView && (
+            <Footer footerTheme={footerTheme}>
+              {FooterView}
+            </Footer>
+          )}
         </Box>
-        <Footer footerBottomPanel={footerBottomPanel}/>
       </Box>
     </Box>
   );

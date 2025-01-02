@@ -1,5 +1,5 @@
 import { Theme } from "@mui/material/styles";
-import { Branding, Navigation, Router, UserData } from "../../types/ICommon";
+import { Branding, Navigation, Router } from "../../types/ICommon";
 import { Session, Authentication } from "../../types/IAuth";
 import { SxProps } from "@mui/material";
 
@@ -9,7 +9,6 @@ export interface AppLayoutProviderProps {
   children: React.ReactNode;
   theme?: AppTheme;
   branding?: Branding | undefined;
-  userData? : UserData | undefined;
   navigation?: Navigation;
   router?: Router;
   session?: Session | null;
@@ -23,6 +22,10 @@ export interface AppLayoutProps {
   defaultSidebarCollapsed?: boolean;
   hideNavigation?: boolean;
   sidebarExpandedWidth?: number;
-  footerBottomPanel?: any,
+  footerBottomPanel?: any;
+  footerView?: React.ReactNode;
+  toolbarView?: React.ReactNode;
+  headerTheme?: any;
+  footerTheme?: any;
   sx?: SxProps;
 }

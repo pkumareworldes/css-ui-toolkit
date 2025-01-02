@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 
 export interface TypographyProps extends MuiTypographyProps {
-  title: string;
+  title?: string;
 }
 /**
  *

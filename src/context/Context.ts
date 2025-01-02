@@ -1,10 +1,8 @@
 import * as React from "react";
 import type { PaletteMode } from "@mui/material";
-import type { Branding, Navigation, Router, UserData } from "../types/ICommon";
+import type { Branding, Navigation, Router } from "../types/ICommon";
 
 export const BrandingContext = React.createContext<Branding | undefined>(undefined);
-
-export const UserDataContext = React.createContext<UserData | undefined>(undefined);
 
 export const NavigationContext = React.createContext<Navigation>([]);
 

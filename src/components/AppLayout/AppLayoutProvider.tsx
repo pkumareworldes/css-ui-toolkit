@@ -5,7 +5,6 @@ import {
   BrandingContext,
   NavigationContext,
   RouterContext,
-  UserDataContext,
   WindowContext,
 } from "../../context/Context";
 import AppThemeProvider from "./AppThemeProvider";
@@ -31,7 +30,6 @@ const AppLayoutProvider = (props: AppLayoutProviderProps) => {
     children,
     theme = createTheme(),
     branding,
-    userData,
     navigation = [],
     router = null,
     authentication = null,
@@ -46,11 +44,9 @@ const AppLayoutProvider = (props: AppLayoutProviderProps) => {
           <RouterContext.Provider value={router}>
             <AppThemeProvider theme={theme} window={appWindow}>
               <BrandingContext.Provider value={branding}>
-                <UserDataContext.Provider value={userData}>
                   <NavigationContext.Provider value={navigation}>
                     {children}
                   </NavigationContext.Provider>
-                </UserDataContext.Provider>
               </BrandingContext.Provider>
             </AppThemeProvider>
           </RouterContext.Provider>

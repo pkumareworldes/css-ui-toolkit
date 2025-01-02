@@ -15,3 +15,5 @@ export * from "./Chip";
 export * from "./ReadonlyField";
 export * from "./Scrollbars";
 export * from "./SidebarNavigation";
+export * from "./Icon";
+export * from "./Stack";

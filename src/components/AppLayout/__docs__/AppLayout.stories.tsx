@@ -50,16 +50,29 @@ const footer = [
   },
 ];
 
+const Theme = {
+  palette: {
+    primary: {
+      main: "#000000"
+    },
+    secondary: {
+      main: "#FFFFFF"
+    }
+  }
+};
+
 const theme = createTheme({
   cssVariables: {
     colorSchemeSelector: "data-eworldes-template-color-scheme",
   },
   colorSchemes: { light: true, dark: true },
   palette: {
-    background: {
-      paper: "#0C44AE",
-      default: "#f6f7f9",
+    primary: {
+      main: "#000000"
     },
+    secondary: {
+      main: "#FFFFFF"
+    }
   },
   breakpoints: {
     values: {
@@ -117,9 +130,19 @@ export default {
 // Template function to create the component with different args
 const Template: Story<AppLayoutProviderProps> = (args) => {
   return (
-    <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION} branding={branding} userData= {sampleUserData}>
-      <AppLayout hideNavigation={false} defaultSidebarCollapsed={true} footerBottomPanel={footer}>
-        <h1> Test page</h1>
+    <AppLayoutProvider {...args} theme={theme} navigation={NAVIGATION} branding={branding}>
+      <AppLayout 
+      hideNavigation={false} 
+      defaultSidebarCollapsed={true} 
+      footerBottomPanel={footer} 
+      headerTheme={{palette: {
+        background: {
+          paper: "#0C44AE",
+          default: "#f6f7f9",
+        },
+      }}}
+      footerView={<h6>Footer</h6>}>
+        <h1> The standard Lorem Ipsum passage, used since the 1500s</h1>
       </AppLayout>
     </AppLayoutProvider>
   );

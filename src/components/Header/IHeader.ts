@@ -1,8 +1,7 @@
-import { Branding, UserData } from "../../types/ICommon";
-
+import { Branding } from "../../types/ICommon";
+import { SxProps } from "@mui/material";
 export interface HeaderProps {
   branding?: Branding;
-  userData?: UserData;
   hideNavigation: boolean;
   toggleNavigationExpanded: () => void;
   disableCollapsibleSidebar: boolean;
@@ -10,6 +9,6 @@ export interface HeaderProps {
   isMobileNavigationExpanded: boolean;
   isDesktopNavigationExpanded: boolean;
   headerTheme?: any;
-  headerLeftPanel?: React.ReactNode;
-  headerRightPanel?: React.ReactNode;
+  toolbarView?: React.ReactNode;
+  sxStyle?: SxProps;
 }
