@@ -88,6 +88,7 @@ Default.args = {
   multiple: false,
   variant: 'standard',
   size: 'medium',
+  placeholder: 'Please select',
 };
 
 export const MultipleSelect = Template.bind({});
